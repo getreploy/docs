@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 287);
+/******/ 	return __webpack_require__(__webpack_require__.s = 288);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -364,7 +364,7 @@ module.exports = require("path");
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(53);
+/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -918,7 +918,7 @@ module.exports = Marker;
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(26);
 /* harmony import */ var _docusaurus_isInternalUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(18);
-/* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54);
+/* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(55);
 /* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_4__);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -8059,7 +8059,7 @@ Prism.languages.yml = Prism.languages.yaml;
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _theme_ThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57);
+/* harmony import */ var _theme_ThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(58);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -9159,6 +9159,175 @@ exports.computeSourceURL = computeSourceURL;
 
 /***/ }),
 /* 38 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(0);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Head.js
+var Head = __webpack_require__(53);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/isInternalUrl.js
+var isInternalUrl = __webpack_require__(18);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js
+var useDocusaurusContext = __webpack_require__(5);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useBaseUrl.js
+var useBaseUrl = __webpack_require__(11);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useTheme.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */const themes={light:'',dark:'dark'};const useTheme=()=>{const{siteConfig:{themeConfig:{disableDarkMode}}={}}=Object(useDocusaurusContext["a" /* default */])();const[theme,setTheme]=Object(react["useState"])(typeof document!=='undefined'?document.documentElement.getAttribute('data-theme'):themes.light);const setThemeSyncWithLocalStorage=Object(react["useCallback"])(newTheme=>{try{localStorage.setItem('theme',newTheme);}catch(err){console.error(err);}},[setTheme]);const setLightTheme=Object(react["useCallback"])(()=>{setTheme(themes.light);setThemeSyncWithLocalStorage(themes.light);},[]);const setDarkTheme=Object(react["useCallback"])(()=>{setTheme(themes.dark);setThemeSyncWithLocalStorage(themes.dark);},[]);Object(react["useEffect"])(()=>{document.documentElement.setAttribute('data-theme',theme);},[theme]);Object(react["useEffect"])(()=>{if(disableDarkMode){return;}try{const localStorageTheme=localStorage.getItem('theme');if(localStorageTheme!==null){setTheme(localStorageTheme);}}catch(err){console.error(err);}},[setTheme]);Object(react["useEffect"])(()=>{if(disableDarkMode){return;}window.matchMedia('(prefers-color-scheme: dark)').addListener(({matches})=>{setTheme(matches?themes.dark:themes.light);});},[]);return{isDarkTheme:theme===themes.dark,setLightTheme,setDarkTheme};};/* harmony default export */ var hooks_useTheme = (useTheme);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/ThemeContext.js
+var ThemeContext = __webpack_require__(58);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/ThemeProvider/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function ThemeProvider(props){const{isDarkTheme,setLightTheme,setDarkTheme}=hooks_useTheme();return/*#__PURE__*/react_default.a.createElement(ThemeContext["a" /* default */].Provider,{value:{isDarkTheme,setLightTheme,setDarkTheme}},props.children);}/* harmony default export */ var theme_ThemeProvider = (ThemeProvider);
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useTabGroupChoice.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */const TAB_CHOICE_PREFIX='docusaurus.tab.';const useTabGroupChoice=()=>{const[tabGroupChoices,setChoices]=Object(react["useState"])({});const setChoiceSyncWithLocalStorage=Object(react["useCallback"])((groupId,newChoice)=>{try{localStorage.setItem(`${TAB_CHOICE_PREFIX}${groupId}`,newChoice);}catch(err){console.error(err);}},[]);Object(react["useEffect"])(()=>{try{const localStorageChoices={};for(let i=0;i<localStorage.length;i+=1){const storageKey=localStorage.key(i);if(storageKey.startsWith(TAB_CHOICE_PREFIX)){const groupId=storageKey.substring(TAB_CHOICE_PREFIX.length);localStorageChoices[groupId]=localStorage.getItem(storageKey);}}setChoices(localStorageChoices);}catch(err){console.error(err);}},[]);return{tabGroupChoices,setTabGroupChoices:(groupId,newChoice)=>{setChoices(oldChoices=>({...oldChoices,[groupId]:newChoice}));setChoiceSyncWithLocalStorage(groupId,newChoice);}};};/* harmony default export */ var hooks_useTabGroupChoice = (useTabGroupChoice);
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/TabGroupChoiceContext.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */const TabGroupChoiceContext=Object(react["createContext"])({tabGroupChoices:{},setTabGroupChoices:()=>{}});/* harmony default export */ var theme_TabGroupChoiceContext = (TabGroupChoiceContext);
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/TabGroupChoiceProvider/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function TabGroupChoiceProvider(props){const{tabGroupChoices,setTabGroupChoices}=hooks_useTabGroupChoice();return/*#__PURE__*/react_default.a.createElement(theme_TabGroupChoiceContext.Provider,{value:{tabGroupChoices,setTabGroupChoices}},props.children);}/* harmony default export */ var theme_TabGroupChoiceProvider = (TabGroupChoiceProvider);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/AnnouncementBar/styles.module.css
+var styles_module = __webpack_require__(63);
+var styles_module_default = /*#__PURE__*/__webpack_require__.n(styles_module);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/AnnouncementBar/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */const STORAGE_DISMISS_KEY='docusaurus.announcement.dismiss';const STORAGE_ID_KEY='docusaurus.announcement.id';function AnnouncementBar(){const{siteConfig:{themeConfig:{announcementBar={}}}={}}=Object(useDocusaurusContext["a" /* default */])();const{id,content,backgroundColor,textColor}=announcementBar;const[isClosed,setClosed]=Object(react["useState"])(true);const handleClose=()=>{localStorage.setItem(STORAGE_DISMISS_KEY,true);setClosed(true);};Object(react["useEffect"])(()=>{const viewedId=localStorage.getItem(STORAGE_ID_KEY);const isNewAnnouncement=id!==viewedId;localStorage.setItem(STORAGE_ID_KEY,id);if(isNewAnnouncement){localStorage.setItem(STORAGE_DISMISS_KEY,false);}if(isNewAnnouncement||localStorage.getItem(STORAGE_DISMISS_KEY)==='false'){setClosed(false);}},[]);if(!content||isClosed){return null;}return/*#__PURE__*/react_default.a.createElement("div",{className:styles_module_default.a.announcementBar,style:{backgroundColor,color:textColor},role:"banner"},/*#__PURE__*/react_default.a.createElement("div",{className:styles_module_default.a.announcementBarContent,dangerouslySetInnerHTML:{__html:content}}),/*#__PURE__*/react_default.a.createElement("button",{type:"button",className:styles_module_default.a.announcementBarClose,onClick:handleClose,"aria-label":"Close"},/*#__PURE__*/react_default.a.createElement("span",{"aria-hidden":"true"},"\xD7")));}/* harmony default export */ var theme_AnnouncementBar = (AnnouncementBar);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(2);
+
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var classnames = __webpack_require__(7);
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
+var Link = __webpack_require__(12);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Noop.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *//* harmony default export */ var Noop = (()=>null);
+// CONCATENATED MODULE: ./src/theme/SearchBar.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+// EXTERNAL MODULE: ./node_modules/react-toggle/dist/component/index.js
+var component = __webpack_require__(134);
+var component_default = /*#__PURE__*/__webpack_require__.n(component);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Toggle/styles.module.css
+var Toggle_styles_module = __webpack_require__(40);
+var Toggle_styles_module_default = /*#__PURE__*/__webpack_require__.n(Toggle_styles_module);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Toggle/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */const Moon=()=>/*#__PURE__*/react_default.a.createElement("span",{className:classnames_default()(Toggle_styles_module_default.a.toggle,Toggle_styles_module_default.a.moon)});const Sun=()=>/*#__PURE__*/react_default.a.createElement("span",{className:classnames_default()(Toggle_styles_module_default.a.toggle,Toggle_styles_module_default.a.sun)});/* harmony default export */ var Toggle = (function(props){const{isClient}=Object(useDocusaurusContext["a" /* default */])();return/*#__PURE__*/react_default.a.createElement(component_default.a,Object(esm_extends["a" /* default */])({disabled:!isClient,icons:{checked:/*#__PURE__*/react_default.a.createElement(Moon,null),unchecked:/*#__PURE__*/react_default.a.createElement(Sun,null)}},props));});
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useThemeContext.js
+var useThemeContext = __webpack_require__(32);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/router.js
+var router = __webpack_require__(59);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLocationHash.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function useLocationHash(initialHash){const[hash,setHash]=Object(react["useState"])(initialHash);Object(react["useEffect"])(()=>{const handleHashChange=()=>setHash(window.location.hash);window.addEventListener('hashchange',handleHashChange);return()=>window.removeEventListener('hashchange',handleHashChange);},[]);return[hash,setHash];}/* harmony default export */ var hooks_useLocationHash = (useLocationHash);
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useHideableNavbar.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */const useHideableNavbar=hideOnScroll=>{const[isNavbarVisible,setIsNavbarVisible]=Object(react["useState"])(true);const[isFocusedAnchor,setIsFocusedAnchor]=Object(react["useState"])(false);const[lastScrollTop,setLastScrollTop]=Object(react["useState"])(0);const[navbarHeight,setNavbarHeight]=Object(react["useState"])(0);const navbarRef=Object(react["useCallback"])(node=>{if(node!==null){setNavbarHeight(node.getBoundingClientRect().height);}},[]);const location=Object(router["b" /* useLocation */])();const[hash,setHash]=hooks_useLocationHash(location.hash);const handleScroll=()=>{const scrollTop=window.pageYOffset||document.documentElement.scrollTop;if(scrollTop===0){setIsNavbarVisible(true);}if(scrollTop<navbarHeight){return;}if(isFocusedAnchor){setIsFocusedAnchor(false);setIsNavbarVisible(false);setLastScrollTop(scrollTop);return;}const documentHeight=document.documentElement.scrollHeight-navbarHeight;const windowHeight=window.innerHeight;if(lastScrollTop&&scrollTop>=lastScrollTop){setIsNavbarVisible(false);}else if(scrollTop+windowHeight<documentHeight){setIsNavbarVisible(true);}setLastScrollTop(scrollTop);};Object(react["useEffect"])(()=>{if(!hideOnScroll){return undefined;}window.addEventListener('scroll',handleScroll);return()=>{window.removeEventListener('scroll',handleScroll);};},[lastScrollTop,navbarHeight]);Object(react["useEffect"])(()=>{if(!hideOnScroll){return;}setIsNavbarVisible(true);setHash(location.hash);},[location]);Object(react["useEffect"])(()=>{if(!hideOnScroll){return;}if(!hash){return;}setIsFocusedAnchor(true);},[hash]);return{navbarRef,isNavbarVisible};};/* harmony default export */ var hooks_useHideableNavbar = (useHideableNavbar);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLockBodyScroll.js
+var useLockBodyScroll = __webpack_require__(60);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLogo.js
+var useLogo = __webpack_require__(61);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Navbar/styles.module.css
+var Navbar_styles_module = __webpack_require__(41);
+var Navbar_styles_module_default = /*#__PURE__*/__webpack_require__.n(Navbar_styles_module);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Navbar/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function NavLink({activeBasePath,to,href,label,position,...props}){const toUrl=Object(useBaseUrl["a" /* default */])(to);const activeBaseUrl=Object(useBaseUrl["a" /* default */])(activeBasePath);return/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({},href?{target:'_blank',rel:'noopener noreferrer',href}:{activeClassName:'navbar__link--active',to:toUrl,...(activeBasePath?{isActive:(_match,location)=>location.pathname.startsWith(activeBaseUrl)}:null)},props),label);}function NavItem({items,position,...props}){if(!items){return/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"navbar__item navbar__link"},props));}return/*#__PURE__*/react_default.a.createElement("div",{className:classnames_default()('navbar__item','dropdown','dropdown--hoverable',{'dropdown--left':position==='left','dropdown--right':position==='right'})},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"navbar__item navbar__link"},props),props.label),/*#__PURE__*/react_default.a.createElement("ul",{className:"dropdown__menu"},items.map((linkItemInner,i)=>/*#__PURE__*/react_default.a.createElement("li",{key:i},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"navbar__item navbar__link"},linkItemInner))))));}function MobileNavItem({items,...props}){if(!items){return/*#__PURE__*/react_default.a.createElement("li",{className:"menu__list-item"},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"menu__link"},props)));}return/*#__PURE__*/react_default.a.createElement("li",{className:"menu__list-item"},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"menu__link menu__link--sublist"},props),props.label),/*#__PURE__*/react_default.a.createElement("ul",{className:"menu__list"},items.map((linkItemInner,i)=>/*#__PURE__*/react_default.a.createElement("li",{className:"menu__list-item",key:i},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"menu__link"},linkItemInner))))));}function Navbar(){const{siteConfig:{themeConfig:{navbar:{title,links=[],hideOnScroll=false}={},disableDarkMode=false}},isClient}=Object(useDocusaurusContext["a" /* default */])();const[sidebarShown,setSidebarShown]=Object(react["useState"])(false);const[isSearchBarExpanded,setIsSearchBarExpanded]=Object(react["useState"])(false);const{isDarkTheme,setLightTheme,setDarkTheme}=Object(useThemeContext["a" /* default */])();const{navbarRef,isNavbarVisible}=hooks_useHideableNavbar(hideOnScroll);const{logoLink,logoLinkProps,logoImageUrl,logoAlt}=Object(useLogo["a" /* default */])();Object(useLockBodyScroll["a" /* default */])(sidebarShown);const showSidebar=Object(react["useCallback"])(()=>{setSidebarShown(true);},[setSidebarShown]);const hideSidebar=Object(react["useCallback"])(()=>{setSidebarShown(false);},[setSidebarShown]);const onToggleChange=Object(react["useCallback"])(e=>e.target.checked?setDarkTheme():setLightTheme(),[setLightTheme,setDarkTheme]);return/*#__PURE__*/react_default.a.createElement("nav",{ref:navbarRef,className:classnames_default()('navbar','navbar--light','navbar--fixed-top',{'navbar-sidebar--show':sidebarShown,[Navbar_styles_module_default.a.navbarHideable]:hideOnScroll,[Navbar_styles_module_default.a.navbarHidden]:!isNavbarVisible})},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__inner"},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__items"},/*#__PURE__*/react_default.a.createElement("div",{"aria-label":"Navigation bar toggle",className:"navbar__toggle",role:"button",tabIndex:0,onClick:showSidebar,onKeyDown:showSidebar},/*#__PURE__*/react_default.a.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:"30",height:"30",viewBox:"0 0 30 30",role:"img",focusable:"false"},/*#__PURE__*/react_default.a.createElement("title",null,"Menu"),/*#__PURE__*/react_default.a.createElement("path",{stroke:"currentColor",strokeLinecap:"round",strokeMiterlimit:"10",strokeWidth:"2",d:"M4 7h22M4 15h22M4 23h22"}))),/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"navbar__brand",to:logoLink},logoLinkProps),logoImageUrl!=null&&/*#__PURE__*/react_default.a.createElement("img",{key:isClient,className:"navbar__logo",src:logoImageUrl,alt:logoAlt}),title!=null&&/*#__PURE__*/react_default.a.createElement("strong",{className:classnames_default()('navbar__title',{[Navbar_styles_module_default.a.hideLogoText]:isSearchBarExpanded})},title)),links.filter(linkItem=>linkItem.position==='left').map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(NavItem,Object(esm_extends["a" /* default */])({},linkItem,{key:i})))),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__items navbar__items--right"},links.filter(linkItem=>linkItem.position==='right').map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(NavItem,Object(esm_extends["a" /* default */])({},linkItem,{key:i}))),!disableDarkMode&&/*#__PURE__*/react_default.a.createElement(Toggle,{className:Navbar_styles_module_default.a.displayOnlyInLargeViewport,"aria-label":"Dark mode toggle",checked:isDarkTheme,onChange:onToggleChange}),/*#__PURE__*/react_default.a.createElement(Noop,{handleSearchBarToggle:setIsSearchBarExpanded,isSearchBarExpanded:isSearchBarExpanded}))),/*#__PURE__*/react_default.a.createElement("div",{role:"presentation",className:"navbar-sidebar__backdrop",onClick:hideSidebar}),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar"},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar__brand"},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"navbar__brand",onClick:hideSidebar,to:logoLink},logoLinkProps),logoImageUrl!=null&&/*#__PURE__*/react_default.a.createElement("img",{key:isClient,className:"navbar__logo",src:logoImageUrl,alt:logoAlt}),title!=null&&/*#__PURE__*/react_default.a.createElement("strong",{className:"navbar__title"},title)),!disableDarkMode&&sidebarShown&&/*#__PURE__*/react_default.a.createElement(Toggle,{"aria-label":"Dark mode toggle in sidebar",checked:isDarkTheme,onChange:onToggleChange})),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar__items"},/*#__PURE__*/react_default.a.createElement("div",{className:"menu"},/*#__PURE__*/react_default.a.createElement("ul",{className:"menu__list"},links.map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(MobileNavItem,Object(esm_extends["a" /* default */])({},linkItem,{onClick:hideSidebar,key:i}))))))));}/* harmony default export */ var theme_Navbar = (Navbar);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Footer/styles.module.css
+var Footer_styles_module = __webpack_require__(135);
+var Footer_styles_module_default = /*#__PURE__*/__webpack_require__.n(Footer_styles_module);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Footer/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function FooterLink({to,href,label,...props}){const toUrl=Object(useBaseUrl["a" /* default */])(to);return/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"footer__link-item"},href?{target:'_blank',rel:'noopener noreferrer',href}:{to:toUrl},props),label);}const FooterLogo=({url,alt})=>/*#__PURE__*/react_default.a.createElement("img",{className:"footer__logo",alt:alt,src:url});function Footer(){const context=Object(useDocusaurusContext["a" /* default */])();const{siteConfig={}}=context;const{themeConfig={}}=siteConfig;const{footer}=themeConfig;const{copyright,links=[],logo={}}=footer||{};const logoUrl=Object(useBaseUrl["a" /* default */])(logo.src);if(!footer){return null;}return/*#__PURE__*/react_default.a.createElement("footer",{className:classnames_default()('footer',{'footer--dark':footer.style==='dark'})},/*#__PURE__*/react_default.a.createElement("div",{className:"container"},links&&links.length>0&&/*#__PURE__*/react_default.a.createElement("div",{className:"row footer__links"},links.map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement("div",{key:i,className:"col footer__col"},linkItem.title!=null?/*#__PURE__*/react_default.a.createElement("h4",{className:"footer__title"},linkItem.title):null,linkItem.items!=null&&Array.isArray(linkItem.items)&&linkItem.items.length>0?/*#__PURE__*/react_default.a.createElement("ul",{className:"footer__items"},linkItem.items.map((item,key)=>item.html?/*#__PURE__*/react_default.a.createElement("li",{key:key,className:"footer__item",dangerouslySetInnerHTML:{__html:item.html}}):/*#__PURE__*/react_default.a.createElement("li",{key:item.href||item.to,className:"footer__item"},/*#__PURE__*/react_default.a.createElement(FooterLink,item)))):null))),(logo||copyright)&&/*#__PURE__*/react_default.a.createElement("div",{className:"text--center"},logo&&logo.src&&/*#__PURE__*/react_default.a.createElement("div",{className:"margin-bottom--sm"},logo.href?/*#__PURE__*/react_default.a.createElement("a",{href:logo.href,target:"_blank",rel:"noopener noreferrer",className:Footer_styles_module_default.a.footerLogoLink},/*#__PURE__*/react_default.a.createElement(FooterLogo,{alt:logo.alt,url:logoUrl})):/*#__PURE__*/react_default.a.createElement(FooterLogo,{alt:logo.alt,url:logoUrl})),/*#__PURE__*/react_default.a.createElement("div",{dangerouslySetInnerHTML:{__html:copyright}}))));}/* harmony default export */ var theme_Footer = (Footer);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Layout/styles.css
+var styles = __webpack_require__(277);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Layout/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function Layout(props){const{siteConfig={}}=Object(useDocusaurusContext["a" /* default */])();const{favicon,title:siteTitle,themeConfig:{image:defaultImage},url:siteUrl}=siteConfig;const{children,title,noFooter,description,image,keywords,permalink,version}=props;const metaTitle=title?`${title} | ${siteTitle}`:siteTitle;const metaImage=image||defaultImage;let metaImageUrl=siteUrl+Object(useBaseUrl["a" /* default */])(metaImage);if(!Object(isInternalUrl["a" /* default */])(metaImage)){metaImageUrl=metaImage;}const faviconUrl=Object(useBaseUrl["a" /* default */])(favicon);return/*#__PURE__*/react_default.a.createElement(theme_ThemeProvider,null,/*#__PURE__*/react_default.a.createElement(theme_TabGroupChoiceProvider,null,/*#__PURE__*/react_default.a.createElement(Head["a" /* default */],null,/*#__PURE__*/react_default.a.createElement("html",{lang:"en"}),metaTitle&&/*#__PURE__*/react_default.a.createElement("title",null,metaTitle),metaTitle&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:title",content:metaTitle}),favicon&&/*#__PURE__*/react_default.a.createElement("link",{rel:"shortcut icon",href:faviconUrl}),description&&/*#__PURE__*/react_default.a.createElement("meta",{name:"description",content:description}),description&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:description",content:description}),version&&/*#__PURE__*/react_default.a.createElement("meta",{name:"docsearch:version",content:version}),keywords&&keywords.length&&/*#__PURE__*/react_default.a.createElement("meta",{name:"keywords",content:keywords.join(',')}),metaImage&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:image",content:metaImageUrl}),metaImage&&/*#__PURE__*/react_default.a.createElement("meta",{property:"twitter:image",content:metaImageUrl}),metaImage&&/*#__PURE__*/react_default.a.createElement("meta",{name:"twitter:image:alt",content:`Image for ${metaTitle}`}),permalink&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:url",content:siteUrl+permalink}),/*#__PURE__*/react_default.a.createElement("meta",{name:"twitter:card",content:"summary_large_image"})),/*#__PURE__*/react_default.a.createElement(theme_AnnouncementBar,null),/*#__PURE__*/react_default.a.createElement(theme_Navbar,null),/*#__PURE__*/react_default.a.createElement("div",{className:"main-wrapper"},children),!noFooter&&/*#__PURE__*/react_default.a.createElement(theme_Footer,null)));}/* harmony default export */ var theme_Layout = __webpack_exports__["a"] = (Layout);
+
+/***/ }),
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9497,7 +9666,7 @@ Loadable.preloadReady = function () {
 module.exports = Loadable;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 // Exports
@@ -9509,7 +9678,7 @@ module.exports = {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 // Exports
@@ -9522,7 +9691,7 @@ module.exports = {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var systemLineBreak = __webpack_require__(86).EOL;
@@ -9744,7 +9913,7 @@ module.exports = {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 function formatPosition(metadata) {
@@ -9761,7 +9930,7 @@ module.exports = formatPosition;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Marker = __webpack_require__(10);
@@ -10026,7 +10195,7 @@ module.exports = isMergeable;
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var mergeIntoShorthands = __webpack_require__(166);
@@ -10072,7 +10241,7 @@ module.exports = optimizeProperties;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var wrapSingle = __webpack_require__(30).single;
@@ -10111,7 +10280,7 @@ module.exports = {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // TODO: it'd be great to merge it with the other canReorder functionality
@@ -10210,7 +10379,7 @@ module.exports = {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports) {
 
 var NO_PROTOCOL_RESOURCE_PATTERN = /^\/\//;
@@ -10223,7 +10392,7 @@ module.exports = hasProtocol;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10402,7 +10571,7 @@ module.exports = {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10418,7 +10587,7 @@ module.exports = {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10515,7 +10684,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10528,7 +10697,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* harmony import */ var react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_fast_compare__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var object_assign__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(50);
+/* harmony import */ var object_assign__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(51);
 /* harmony import */ var object_assign__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(object_assign__WEBPACK_IMPORTED_MODULE_4__);
 
 
@@ -11431,13 +11600,13 @@ HelmetExport.renderStatic = HelmetExport.rewind;
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -11446,7 +11615,7 @@ HelmetExport.renderStatic = HelmetExport.rewind;
  */function Head(props){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__[/* Helmet */ "a"],props);}/* harmony default export */ __webpack_exports__["a"] = (Head);
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11460,7 +11629,7 @@ HelmetExport.renderStatic = HelmetExport.rewind;
  *//* harmony default export */ __webpack_exports__["a"] = (react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({}));
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports) {
 
 /**
@@ -11471,11 +11640,11 @@ HelmetExport.renderStatic = HelmetExport.rewind;
  */const canUseDOM=!!(typeof window!=='undefined'&&window.document&&window.document.createElement);const ExecutionEnvironment={canUseDOM,canUseEventListeners:canUseDOM&&!!(window.addEventListener||window.attachEvent),canUseIntersectionObserver:canUseDOM&&'IntersectionObserver'in window,canUseViewport:canUseDOM&&!!window.screen};module.exports=ExecutionEnvironment;
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var react_router_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(56);
+/* harmony import */ var react_router_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(57);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -11484,7 +11653,7 @@ HelmetExport.renderStatic = HelmetExport.rewind;
  *//* harmony default export */ __webpack_exports__["a"] = (react_router_config__WEBPACK_IMPORTED_MODULE_0__[/* renderRoutes */ "b"]);
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11556,7 +11725,7 @@ function renderRoutes(routes, extraProps, switchProps) {
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11570,7 +11739,7 @@ function renderRoutes(routes, extraProps, switchProps) {
  */const ThemeContext=react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({isDarkTheme:false,setLightTheme:()=>{},setDarkTheme:()=>{}});/* harmony default export */ __webpack_exports__["a"] = (ThemeContext);
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11587,7 +11756,7 @@ function renderRoutes(routes, extraProps, switchProps) {
  */
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11601,7 +11770,7 @@ function renderRoutes(routes, extraProps, switchProps) {
  */function useLockBodyScroll(lock=true){Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(()=>{document.body.style.overflow=lock?'hidden':'visible';return()=>{document.body.style.overflow='visible';};},[lock]);}/* harmony default export */ __webpack_exports__["a"] = (useLockBodyScroll);
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11617,180 +11786,11 @@ function renderRoutes(routes, extraProps, switchProps) {
  */const useLogo=()=>{const{siteConfig:{baseUrl,themeConfig:{navbar:{logo={}}={}}}={}}=Object(_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])();const{isDarkTheme}=Object(_theme_hooks_useThemeContext__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])();const logoLink=logo.href||baseUrl;let logoLinkProps={};if(logo.target){logoLinkProps={target:logo.target};}else if(!Object(_docusaurus_isInternalUrl__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(logoLink)){logoLinkProps={rel:'noopener noreferrer',target:'_blank'};}const logoSrc=logo.srcDark&&isDarkTheme?logo.srcDark:logo.src;const logoImageUrl=Object(_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(logoSrc);return{logoLink,logoLinkProps,logoImageUrl,logoAlt:logo.alt};};/* harmony default export */ __webpack_exports__["a"] = (useLogo);
 
 /***/ }),
-/* 61 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({"plugins":[],"themes":[],"customFields":{},"themeConfig":{"navbar":{"logo":{"alt":"Reploy Logo","src":"img/logo.svg"},"links":[{"href":"https://github.com/getreploy/docs","label":"GitHub","position":"right"}]},"footer":{"style":"dark","links":[{"title":"Docs","items":[{"label":"Style Guide","to":"docs/doc1"},{"label":"Second Doc","to":"docs/doc2"}]},{"title":"Community","items":[{"label":"Stack Overflow","href":"https://stackoverflow.com/questions/tagged/docusaurus"},{"label":"Discord","href":"https://discordapp.com/invite/docusaurus"}]},{"title":"Social","items":[{"label":"GitHub","href":"https://github.com/getreploy/"},{"label":"Facebook","href":"https://fb.com/getreploy"}]},{"title":"Contact","items":[{"label":"hello@getreploy.com","href":"https://github.com/getreploy/"},{"label":"Messenger","href":"https://m.me/getreploy"}]}],"copyright":"Copyright © 2020 Reploy, Inc."}},"title":"Reploy","tagline":"","url":"https://getreploy.com","baseUrl":"/","favicon":"img/favicon.ico","organizationName":"getreploy","projectName":"docs","presets":[["@docusaurus/preset-classic",{"docs":{"sidebarPath":"/Users/himankyadav/Documents/reploy-docs/sidebars.js","editUrl":"https://github.com/getreploy/docs/edit/master/website/"},"theme":{"customCss":"/Users/himankyadav/Documents/reploy-docs/src/css/custom.css"}}]]});
-
-/***/ }),
 /* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(0);
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Head.js
-var Head = __webpack_require__(52);
-
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/isInternalUrl.js
-var isInternalUrl = __webpack_require__(18);
-
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js
-var useDocusaurusContext = __webpack_require__(5);
-
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useBaseUrl.js
-var useBaseUrl = __webpack_require__(11);
-
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useTheme.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */const themes={light:'',dark:'dark'};const useTheme=()=>{const{siteConfig:{themeConfig:{disableDarkMode}}={}}=Object(useDocusaurusContext["a" /* default */])();const[theme,setTheme]=Object(react["useState"])(typeof document!=='undefined'?document.documentElement.getAttribute('data-theme'):themes.light);const setThemeSyncWithLocalStorage=Object(react["useCallback"])(newTheme=>{try{localStorage.setItem('theme',newTheme);}catch(err){console.error(err);}},[setTheme]);const setLightTheme=Object(react["useCallback"])(()=>{setTheme(themes.light);setThemeSyncWithLocalStorage(themes.light);},[]);const setDarkTheme=Object(react["useCallback"])(()=>{setTheme(themes.dark);setThemeSyncWithLocalStorage(themes.dark);},[]);Object(react["useEffect"])(()=>{document.documentElement.setAttribute('data-theme',theme);},[theme]);Object(react["useEffect"])(()=>{if(disableDarkMode){return;}try{const localStorageTheme=localStorage.getItem('theme');if(localStorageTheme!==null){setTheme(localStorageTheme);}}catch(err){console.error(err);}},[setTheme]);Object(react["useEffect"])(()=>{if(disableDarkMode){return;}window.matchMedia('(prefers-color-scheme: dark)').addListener(({matches})=>{setTheme(matches?themes.dark:themes.light);});},[]);return{isDarkTheme:theme===themes.dark,setLightTheme,setDarkTheme};};/* harmony default export */ var hooks_useTheme = (useTheme);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/ThemeContext.js
-var ThemeContext = __webpack_require__(57);
-
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/ThemeProvider/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function ThemeProvider(props){const{isDarkTheme,setLightTheme,setDarkTheme}=hooks_useTheme();return/*#__PURE__*/react_default.a.createElement(ThemeContext["a" /* default */].Provider,{value:{isDarkTheme,setLightTheme,setDarkTheme}},props.children);}/* harmony default export */ var theme_ThemeProvider = (ThemeProvider);
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useTabGroupChoice.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */const TAB_CHOICE_PREFIX='docusaurus.tab.';const useTabGroupChoice=()=>{const[tabGroupChoices,setChoices]=Object(react["useState"])({});const setChoiceSyncWithLocalStorage=Object(react["useCallback"])((groupId,newChoice)=>{try{localStorage.setItem(`${TAB_CHOICE_PREFIX}${groupId}`,newChoice);}catch(err){console.error(err);}},[]);Object(react["useEffect"])(()=>{try{const localStorageChoices={};for(let i=0;i<localStorage.length;i+=1){const storageKey=localStorage.key(i);if(storageKey.startsWith(TAB_CHOICE_PREFIX)){const groupId=storageKey.substring(TAB_CHOICE_PREFIX.length);localStorageChoices[groupId]=localStorage.getItem(storageKey);}}setChoices(localStorageChoices);}catch(err){console.error(err);}},[]);return{tabGroupChoices,setTabGroupChoices:(groupId,newChoice)=>{setChoices(oldChoices=>({...oldChoices,[groupId]:newChoice}));setChoiceSyncWithLocalStorage(groupId,newChoice);}};};/* harmony default export */ var hooks_useTabGroupChoice = (useTabGroupChoice);
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/TabGroupChoiceContext.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */const TabGroupChoiceContext=Object(react["createContext"])({tabGroupChoices:{},setTabGroupChoices:()=>{}});/* harmony default export */ var theme_TabGroupChoiceContext = (TabGroupChoiceContext);
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/TabGroupChoiceProvider/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function TabGroupChoiceProvider(props){const{tabGroupChoices,setTabGroupChoices}=hooks_useTabGroupChoice();return/*#__PURE__*/react_default.a.createElement(theme_TabGroupChoiceContext.Provider,{value:{tabGroupChoices,setTabGroupChoices}},props.children);}/* harmony default export */ var theme_TabGroupChoiceProvider = (TabGroupChoiceProvider);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/AnnouncementBar/styles.module.css
-var styles_module = __webpack_require__(63);
-var styles_module_default = /*#__PURE__*/__webpack_require__.n(styles_module);
-
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/AnnouncementBar/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */const STORAGE_DISMISS_KEY='docusaurus.announcement.dismiss';const STORAGE_ID_KEY='docusaurus.announcement.id';function AnnouncementBar(){const{siteConfig:{themeConfig:{announcementBar={}}}={}}=Object(useDocusaurusContext["a" /* default */])();const{id,content,backgroundColor,textColor}=announcementBar;const[isClosed,setClosed]=Object(react["useState"])(true);const handleClose=()=>{localStorage.setItem(STORAGE_DISMISS_KEY,true);setClosed(true);};Object(react["useEffect"])(()=>{const viewedId=localStorage.getItem(STORAGE_ID_KEY);const isNewAnnouncement=id!==viewedId;localStorage.setItem(STORAGE_ID_KEY,id);if(isNewAnnouncement){localStorage.setItem(STORAGE_DISMISS_KEY,false);}if(isNewAnnouncement||localStorage.getItem(STORAGE_DISMISS_KEY)==='false'){setClosed(false);}},[]);if(!content||isClosed){return null;}return/*#__PURE__*/react_default.a.createElement("div",{className:styles_module_default.a.announcementBar,style:{backgroundColor,color:textColor},role:"banner"},/*#__PURE__*/react_default.a.createElement("div",{className:styles_module_default.a.announcementBarContent,dangerouslySetInnerHTML:{__html:content}}),/*#__PURE__*/react_default.a.createElement("button",{type:"button",className:styles_module_default.a.announcementBarClose,onClick:handleClose,"aria-label":"Close"},/*#__PURE__*/react_default.a.createElement("span",{"aria-hidden":"true"},"\xD7")));}/* harmony default export */ var theme_AnnouncementBar = (AnnouncementBar);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(2);
-
-// EXTERNAL MODULE: ./node_modules/classnames/index.js
-var classnames = __webpack_require__(7);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
-var Link = __webpack_require__(12);
-
-// CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Noop.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *//* harmony default export */ var Noop = (()=>null);
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/SearchBar.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-// EXTERNAL MODULE: ./node_modules/react-toggle/dist/component/index.js
-var component = __webpack_require__(134);
-var component_default = /*#__PURE__*/__webpack_require__.n(component);
-
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Toggle/styles.module.css
-var Toggle_styles_module = __webpack_require__(39);
-var Toggle_styles_module_default = /*#__PURE__*/__webpack_require__.n(Toggle_styles_module);
-
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Toggle/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */const Moon=()=>/*#__PURE__*/react_default.a.createElement("span",{className:classnames_default()(Toggle_styles_module_default.a.toggle,Toggle_styles_module_default.a.moon)});const Sun=()=>/*#__PURE__*/react_default.a.createElement("span",{className:classnames_default()(Toggle_styles_module_default.a.toggle,Toggle_styles_module_default.a.sun)});/* harmony default export */ var Toggle = (function(props){const{isClient}=Object(useDocusaurusContext["a" /* default */])();return/*#__PURE__*/react_default.a.createElement(component_default.a,Object(esm_extends["a" /* default */])({disabled:!isClient,icons:{checked:/*#__PURE__*/react_default.a.createElement(Moon,null),unchecked:/*#__PURE__*/react_default.a.createElement(Sun,null)}},props));});
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useThemeContext.js
-var useThemeContext = __webpack_require__(32);
-
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/router.js
-var router = __webpack_require__(58);
-
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLocationHash.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function useLocationHash(initialHash){const[hash,setHash]=Object(react["useState"])(initialHash);Object(react["useEffect"])(()=>{const handleHashChange=()=>setHash(window.location.hash);window.addEventListener('hashchange',handleHashChange);return()=>window.removeEventListener('hashchange',handleHashChange);},[]);return[hash,setHash];}/* harmony default export */ var hooks_useLocationHash = (useLocationHash);
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useHideableNavbar.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */const useHideableNavbar=hideOnScroll=>{const[isNavbarVisible,setIsNavbarVisible]=Object(react["useState"])(true);const[isFocusedAnchor,setIsFocusedAnchor]=Object(react["useState"])(false);const[lastScrollTop,setLastScrollTop]=Object(react["useState"])(0);const[navbarHeight,setNavbarHeight]=Object(react["useState"])(0);const navbarRef=Object(react["useCallback"])(node=>{if(node!==null){setNavbarHeight(node.getBoundingClientRect().height);}},[]);const location=Object(router["b" /* useLocation */])();const[hash,setHash]=hooks_useLocationHash(location.hash);const handleScroll=()=>{const scrollTop=window.pageYOffset||document.documentElement.scrollTop;if(scrollTop===0){setIsNavbarVisible(true);}if(scrollTop<navbarHeight){return;}if(isFocusedAnchor){setIsFocusedAnchor(false);setIsNavbarVisible(false);setLastScrollTop(scrollTop);return;}const documentHeight=document.documentElement.scrollHeight-navbarHeight;const windowHeight=window.innerHeight;if(lastScrollTop&&scrollTop>=lastScrollTop){setIsNavbarVisible(false);}else if(scrollTop+windowHeight<documentHeight){setIsNavbarVisible(true);}setLastScrollTop(scrollTop);};Object(react["useEffect"])(()=>{if(!hideOnScroll){return undefined;}window.addEventListener('scroll',handleScroll);return()=>{window.removeEventListener('scroll',handleScroll);};},[lastScrollTop,navbarHeight]);Object(react["useEffect"])(()=>{if(!hideOnScroll){return;}setIsNavbarVisible(true);setHash(location.hash);},[location]);Object(react["useEffect"])(()=>{if(!hideOnScroll){return;}if(!hash){return;}setIsFocusedAnchor(true);},[hash]);return{navbarRef,isNavbarVisible};};/* harmony default export */ var hooks_useHideableNavbar = (useHideableNavbar);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLockBodyScroll.js
-var useLockBodyScroll = __webpack_require__(59);
-
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLogo.js
-var useLogo = __webpack_require__(60);
-
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Navbar/styles.module.css
-var Navbar_styles_module = __webpack_require__(40);
-var Navbar_styles_module_default = /*#__PURE__*/__webpack_require__.n(Navbar_styles_module);
-
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Navbar/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function NavLink({activeBasePath,to,href,label,position,...props}){const toUrl=Object(useBaseUrl["a" /* default */])(to);const activeBaseUrl=Object(useBaseUrl["a" /* default */])(activeBasePath);return/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({},href?{target:'_blank',rel:'noopener noreferrer',href}:{activeClassName:'navbar__link--active',to:toUrl,...(activeBasePath?{isActive:(_match,location)=>location.pathname.startsWith(activeBaseUrl)}:null)},props),label);}function NavItem({items,position,...props}){if(!items){return/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"navbar__item navbar__link"},props));}return/*#__PURE__*/react_default.a.createElement("div",{className:classnames_default()('navbar__item','dropdown','dropdown--hoverable',{'dropdown--left':position==='left','dropdown--right':position==='right'})},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"navbar__item navbar__link"},props),props.label),/*#__PURE__*/react_default.a.createElement("ul",{className:"dropdown__menu"},items.map((linkItemInner,i)=>/*#__PURE__*/react_default.a.createElement("li",{key:i},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"navbar__item navbar__link"},linkItemInner))))));}function MobileNavItem({items,...props}){if(!items){return/*#__PURE__*/react_default.a.createElement("li",{className:"menu__list-item"},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"menu__link"},props)));}return/*#__PURE__*/react_default.a.createElement("li",{className:"menu__list-item"},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"menu__link menu__link--sublist"},props),props.label),/*#__PURE__*/react_default.a.createElement("ul",{className:"menu__list"},items.map((linkItemInner,i)=>/*#__PURE__*/react_default.a.createElement("li",{className:"menu__list-item",key:i},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"menu__link"},linkItemInner))))));}function Navbar(){const{siteConfig:{themeConfig:{navbar:{title,links=[],hideOnScroll=false}={},disableDarkMode=false}},isClient}=Object(useDocusaurusContext["a" /* default */])();const[sidebarShown,setSidebarShown]=Object(react["useState"])(false);const[isSearchBarExpanded,setIsSearchBarExpanded]=Object(react["useState"])(false);const{isDarkTheme,setLightTheme,setDarkTheme}=Object(useThemeContext["a" /* default */])();const{navbarRef,isNavbarVisible}=hooks_useHideableNavbar(hideOnScroll);const{logoLink,logoLinkProps,logoImageUrl,logoAlt}=Object(useLogo["a" /* default */])();Object(useLockBodyScroll["a" /* default */])(sidebarShown);const showSidebar=Object(react["useCallback"])(()=>{setSidebarShown(true);},[setSidebarShown]);const hideSidebar=Object(react["useCallback"])(()=>{setSidebarShown(false);},[setSidebarShown]);const onToggleChange=Object(react["useCallback"])(e=>e.target.checked?setDarkTheme():setLightTheme(),[setLightTheme,setDarkTheme]);return/*#__PURE__*/react_default.a.createElement("nav",{ref:navbarRef,className:classnames_default()('navbar','navbar--light','navbar--fixed-top',{'navbar-sidebar--show':sidebarShown,[Navbar_styles_module_default.a.navbarHideable]:hideOnScroll,[Navbar_styles_module_default.a.navbarHidden]:!isNavbarVisible})},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__inner"},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__items"},/*#__PURE__*/react_default.a.createElement("div",{"aria-label":"Navigation bar toggle",className:"navbar__toggle",role:"button",tabIndex:0,onClick:showSidebar,onKeyDown:showSidebar},/*#__PURE__*/react_default.a.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:"30",height:"30",viewBox:"0 0 30 30",role:"img",focusable:"false"},/*#__PURE__*/react_default.a.createElement("title",null,"Menu"),/*#__PURE__*/react_default.a.createElement("path",{stroke:"currentColor",strokeLinecap:"round",strokeMiterlimit:"10",strokeWidth:"2",d:"M4 7h22M4 15h22M4 23h22"}))),/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"navbar__brand",to:logoLink},logoLinkProps),logoImageUrl!=null&&/*#__PURE__*/react_default.a.createElement("img",{key:isClient,className:"navbar__logo",src:logoImageUrl,alt:logoAlt}),title!=null&&/*#__PURE__*/react_default.a.createElement("strong",{className:classnames_default()('navbar__title',{[Navbar_styles_module_default.a.hideLogoText]:isSearchBarExpanded})},title)),links.filter(linkItem=>linkItem.position==='left').map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(NavItem,Object(esm_extends["a" /* default */])({},linkItem,{key:i})))),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__items navbar__items--right"},links.filter(linkItem=>linkItem.position==='right').map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(NavItem,Object(esm_extends["a" /* default */])({},linkItem,{key:i}))),!disableDarkMode&&/*#__PURE__*/react_default.a.createElement(Toggle,{className:Navbar_styles_module_default.a.displayOnlyInLargeViewport,"aria-label":"Dark mode toggle",checked:isDarkTheme,onChange:onToggleChange}),/*#__PURE__*/react_default.a.createElement(Noop,{handleSearchBarToggle:setIsSearchBarExpanded,isSearchBarExpanded:isSearchBarExpanded}))),/*#__PURE__*/react_default.a.createElement("div",{role:"presentation",className:"navbar-sidebar__backdrop",onClick:hideSidebar}),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar"},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar__brand"},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"navbar__brand",onClick:hideSidebar,to:logoLink},logoLinkProps),logoImageUrl!=null&&/*#__PURE__*/react_default.a.createElement("img",{key:isClient,className:"navbar__logo",src:logoImageUrl,alt:logoAlt}),title!=null&&/*#__PURE__*/react_default.a.createElement("strong",{className:"navbar__title"},title)),!disableDarkMode&&sidebarShown&&/*#__PURE__*/react_default.a.createElement(Toggle,{"aria-label":"Dark mode toggle in sidebar",checked:isDarkTheme,onChange:onToggleChange})),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar__items"},/*#__PURE__*/react_default.a.createElement("div",{className:"menu"},/*#__PURE__*/react_default.a.createElement("ul",{className:"menu__list"},links.map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(MobileNavItem,Object(esm_extends["a" /* default */])({},linkItem,{onClick:hideSidebar,key:i}))))))));}/* harmony default export */ var theme_Navbar = (Navbar);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Footer/styles.module.css
-var Footer_styles_module = __webpack_require__(135);
-var Footer_styles_module_default = /*#__PURE__*/__webpack_require__.n(Footer_styles_module);
-
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Footer/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function FooterLink({to,href,label,...props}){const toUrl=Object(useBaseUrl["a" /* default */])(to);return/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"footer__link-item"},href?{target:'_blank',rel:'noopener noreferrer',href}:{to:toUrl},props),label);}const FooterLogo=({url,alt})=>/*#__PURE__*/react_default.a.createElement("img",{className:"footer__logo",alt:alt,src:url});function Footer(){const context=Object(useDocusaurusContext["a" /* default */])();const{siteConfig={}}=context;const{themeConfig={}}=siteConfig;const{footer}=themeConfig;const{copyright,links=[],logo={}}=footer||{};const logoUrl=Object(useBaseUrl["a" /* default */])(logo.src);if(!footer){return null;}return/*#__PURE__*/react_default.a.createElement("footer",{className:classnames_default()('footer',{'footer--dark':footer.style==='dark'})},/*#__PURE__*/react_default.a.createElement("div",{className:"container"},links&&links.length>0&&/*#__PURE__*/react_default.a.createElement("div",{className:"row footer__links"},links.map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement("div",{key:i,className:"col footer__col"},linkItem.title!=null?/*#__PURE__*/react_default.a.createElement("h4",{className:"footer__title"},linkItem.title):null,linkItem.items!=null&&Array.isArray(linkItem.items)&&linkItem.items.length>0?/*#__PURE__*/react_default.a.createElement("ul",{className:"footer__items"},linkItem.items.map((item,key)=>item.html?/*#__PURE__*/react_default.a.createElement("li",{key:key,className:"footer__item",dangerouslySetInnerHTML:{__html:item.html}}):/*#__PURE__*/react_default.a.createElement("li",{key:item.href||item.to,className:"footer__item"},/*#__PURE__*/react_default.a.createElement(FooterLink,item)))):null))),(logo||copyright)&&/*#__PURE__*/react_default.a.createElement("div",{className:"text--center"},logo&&logo.src&&/*#__PURE__*/react_default.a.createElement("div",{className:"margin-bottom--sm"},logo.href?/*#__PURE__*/react_default.a.createElement("a",{href:logo.href,target:"_blank",rel:"noopener noreferrer",className:Footer_styles_module_default.a.footerLogoLink},/*#__PURE__*/react_default.a.createElement(FooterLogo,{alt:logo.alt,url:logoUrl})):/*#__PURE__*/react_default.a.createElement(FooterLogo,{alt:logo.alt,url:logoUrl})),/*#__PURE__*/react_default.a.createElement("div",{dangerouslySetInnerHTML:{__html:copyright}}))));}/* harmony default export */ var theme_Footer = (Footer);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Layout/styles.css
-var styles = __webpack_require__(277);
-
-// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Layout/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function Layout(props){const{siteConfig={}}=Object(useDocusaurusContext["a" /* default */])();const{favicon,title:siteTitle,themeConfig:{image:defaultImage},url:siteUrl}=siteConfig;const{children,title,noFooter,description,image,keywords,permalink,version}=props;const metaTitle=title?`${title} | ${siteTitle}`:siteTitle;const metaImage=image||defaultImage;let metaImageUrl=siteUrl+Object(useBaseUrl["a" /* default */])(metaImage);if(!Object(isInternalUrl["a" /* default */])(metaImage)){metaImageUrl=metaImage;}const faviconUrl=Object(useBaseUrl["a" /* default */])(favicon);return/*#__PURE__*/react_default.a.createElement(theme_ThemeProvider,null,/*#__PURE__*/react_default.a.createElement(theme_TabGroupChoiceProvider,null,/*#__PURE__*/react_default.a.createElement(Head["a" /* default */],null,/*#__PURE__*/react_default.a.createElement("html",{lang:"en"}),metaTitle&&/*#__PURE__*/react_default.a.createElement("title",null,metaTitle),metaTitle&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:title",content:metaTitle}),favicon&&/*#__PURE__*/react_default.a.createElement("link",{rel:"shortcut icon",href:faviconUrl}),description&&/*#__PURE__*/react_default.a.createElement("meta",{name:"description",content:description}),description&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:description",content:description}),version&&/*#__PURE__*/react_default.a.createElement("meta",{name:"docsearch:version",content:version}),keywords&&keywords.length&&/*#__PURE__*/react_default.a.createElement("meta",{name:"keywords",content:keywords.join(',')}),metaImage&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:image",content:metaImageUrl}),metaImage&&/*#__PURE__*/react_default.a.createElement("meta",{property:"twitter:image",content:metaImageUrl}),metaImage&&/*#__PURE__*/react_default.a.createElement("meta",{name:"twitter:image:alt",content:`Image for ${metaTitle}`}),permalink&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:url",content:siteUrl+permalink}),/*#__PURE__*/react_default.a.createElement("meta",{name:"twitter:card",content:"summary_large_image"})),/*#__PURE__*/react_default.a.createElement(theme_AnnouncementBar,null),/*#__PURE__*/react_default.a.createElement(theme_Navbar,null),/*#__PURE__*/react_default.a.createElement("div",{className:"main-wrapper"},children),!noFooter&&/*#__PURE__*/react_default.a.createElement(theme_Footer,null)));}/* harmony default export */ var theme_Layout = __webpack_exports__["a"] = (Layout);
+/* harmony default export */ __webpack_exports__["a"] = ({"plugins":[],"themes":[],"customFields":{},"themeConfig":{"navbar":{"logo":{"alt":"Reploy Logo","src":"img/logo.svg"},"links":[{"href":"https://github.com/getreploy/docs","label":"GitHub","position":"right"}]},"footer":{"style":"dark","links":[{"title":"Docs","items":[{"label":"Style Guide","to":"docs/doc1"},{"label":"Second Doc","to":"docs/doc2"}]},{"title":"Community","items":[{"label":"Stack Overflow","href":"https://stackoverflow.com/questions/tagged/docusaurus"},{"label":"Discord","href":"https://discordapp.com/invite/docusaurus"}]},{"title":"Social","items":[{"label":"GitHub","href":"https://github.com/getreploy/"},{"label":"Facebook","href":"https://fb.com/getreploy"}]},{"title":"Contact","items":[{"label":"hello@getreploy.com","href":"https://github.com/getreploy/"},{"label":"Messenger","href":"https://m.me/getreploy"}]}],"copyright":"Copyright © 2020 Reploy, Inc."}},"title":"Reploy","tagline":"","url":"https://getreploy.com","baseUrl":"/","favicon":"img/favicon.ico","organizationName":"getreploy","projectName":"docs","presets":[["@docusaurus/preset-classic",{"docs":{"sidebarPath":"/Users/himankyadav/Documents/reploy-docs/sidebars.js","editUrl":"https://github.com/getreploy/docs/edit/master/website/"},"theme":{"customCss":"/Users/himankyadav/Documents/reploy-docs/src/css/custom.css"}}]]});
 
 /***/ }),
 /* 63 */
@@ -12332,9 +12332,9 @@ module.exports = sortSelectors;
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Spaces = __webpack_require__(41).Spaces;
+var Spaces = __webpack_require__(42).Spaces;
 var Marker = __webpack_require__(10);
-var formatPosition = __webpack_require__(42);
+var formatPosition = __webpack_require__(43);
 
 var CASE_ATTRIBUTE_PATTERN = /[\s"'][iI]\s*\]/;
 var CASE_RESTORE_PATTERN = /([\d\w])([iI])\]/g;
@@ -12623,8 +12623,8 @@ module.exports = split;
 
 var emptyCharacter = '';
 
-var Breaks = __webpack_require__(41).Breaks;
-var Spaces = __webpack_require__(41).Spaces;
+var Breaks = __webpack_require__(42).Breaks;
+var Spaces = __webpack_require__(42).Spaces;
 
 var Marker = __webpack_require__(10);
 var Token = __webpack_require__(6);
@@ -13024,7 +13024,7 @@ var path = __webpack_require__(4);
 var url = __webpack_require__(24);
 
 var isRemoteResource = __webpack_require__(36);
-var hasProtocol = __webpack_require__(47);
+var hasProtocol = __webpack_require__(48);
 
 var HTTP_PROTOCOL = 'http:';
 
@@ -13250,7 +13250,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./": 283
+	"./": 284
 };
 
 
@@ -13281,7 +13281,7 @@ webpackContext.id = 79;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62);
+/* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -15993,10 +15993,16 @@ But let's throw in a <b>tag</b>.
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
-/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
-function Home(){const context=Object(_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])();return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__[/* Redirect */ "a"],{to:Object(_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('docs/doc1')});}/* harmony default export */ __webpack_exports__["default"] = (Home);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
+/* harmony import */ var _docusaurus_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
+/* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(11);
+/* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(279);
+/* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_module_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(13);
+function Home(){const context=Object(_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])();const{siteConfig={}}=context;return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__[/* Redirect */ "a"],{to:Object(_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('docs/doc1')});}/* harmony default export */ __webpack_exports__["default"] = (Home);
 
 /***/ }),
 /* 120 */
@@ -16050,10 +16056,10 @@ var esm = __webpack_require__(1);
 var useDocusaurusContext = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/renderRoutes.js
-var renderRoutes = __webpack_require__(55);
+var renderRoutes = __webpack_require__(56);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Layout/index.js + 13 modules
-var Layout = __webpack_require__(62);
+var Layout = __webpack_require__(38);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 var esm_extends = __webpack_require__(2);
@@ -16063,10 +16069,10 @@ var classnames = __webpack_require__(7);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLockBodyScroll.js
-var useLockBodyScroll = __webpack_require__(59);
+var useLockBodyScroll = __webpack_require__(60);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLogo.js
-var useLogo = __webpack_require__(60);
+var useLogo = __webpack_require__(61);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
 var Link = __webpack_require__(12);
@@ -16569,7 +16575,7 @@ return/*#__PURE__*/react_default.a.createElement("a",props);}return/*#__PURE__*/
 var NotFound = __webpack_require__(80);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/router.js
-var router = __webpack_require__(58);
+var router = __webpack_require__(59);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/DocPage/styles.module.css
 var DocPage_styles_module = __webpack_require__(64);
@@ -16597,7 +16603,7 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Head.js
-var Head = __webpack_require__(52);
+var Head = __webpack_require__(53);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/isInternalUrl.js
 var isInternalUrl = __webpack_require__(18);
@@ -18281,7 +18287,7 @@ module.exports = Object.assign(
   __webpack_require__(269),
   __webpack_require__(271),
   __webpack_require__(20),
-  __webpack_require__(49)
+  __webpack_require__(50)
 )
 
 // Export fs.promises as a getter property so that we don't trigger
@@ -19838,7 +19844,7 @@ module.exports = JSON.parse("{\"_from\":\"@docusaurus/core@^2.0.0-alpha.50\",\"_
  * LICENSE file in the root directory of this source tree.
  */
 
-var l=__webpack_require__(50),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,z=n?Symbol.for("react.memo"):60115,A=n?Symbol.for("react.lazy"):
+var l=__webpack_require__(51),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,z=n?Symbol.for("react.memo"):60115,A=n?Symbol.for("react.lazy"):
 60116,B="function"===typeof Symbol&&Symbol.iterator;function C(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}
 var D={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},E={};function F(a,b,c){this.props=a;this.context=b;this.refs=E;this.updater=c||D}F.prototype.isReactComponent={};F.prototype.setState=function(a,b){if("object"!==typeof a&&"function"!==typeof a&&null!=a)throw Error(C(85));this.updater.enqueueSetState(this,a,b,"setState")};F.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function G(){}G.prototype=F.prototype;function H(a,b,c){this.props=a;this.context=b;this.refs=E;this.updater=c||D}var I=H.prototype=new G;I.constructor=H;l(I,F.prototype);I.isPureReactComponent=!0;var J={current:null},K=Object.prototype.hasOwnProperty,L={key:!0,ref:!0,__self:!0,__source:!0};
@@ -19882,7 +19888,7 @@ if (true) {
  * LICENSE file in the root directory of this source tree.
  */
 
-var k=__webpack_require__(50),m=__webpack_require__(0),aa=__webpack_require__(84);function r(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}
+var k=__webpack_require__(51),m=__webpack_require__(0),aa=__webpack_require__(84);function r(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}
 var u="function"===typeof Symbol&&Symbol.for,ba=u?Symbol.for("react.portal"):60106,v=u?Symbol.for("react.fragment"):60107,ca=u?Symbol.for("react.strict_mode"):60108,da=u?Symbol.for("react.profiler"):60114,w=u?Symbol.for("react.provider"):60109,ea=u?Symbol.for("react.context"):60110,fa=u?Symbol.for("react.concurrent_mode"):60111,ha=u?Symbol.for("react.forward_ref"):60112,B=u?Symbol.for("react.suspense"):60113,ia=u?Symbol.for("react.suspense_list"):60120,ja=u?Symbol.for("react.memo"):60115,ka=u?Symbol.for("react.lazy"):
 60116,la=u?Symbol.for("react.block"):60121,ma=u?Symbol.for("react.fundamental"):60117,na=u?Symbol.for("react.scope"):60119;function oa(a){if(-1===a._status){a._status=0;var b=a._ctor;b=b();a._result=b;b.then(function(c){0===a._status&&(c=c.default,a._status=1,a._result=c)},function(c){0===a._status&&(a._status=2,a._result=c)})}}
 function C(a){if(null==a)return null;if("function"===typeof a)return a.displayName||a.name||null;if("string"===typeof a)return a;switch(a){case v:return"Fragment";case ba:return"Portal";case da:return"Profiler";case ca:return"StrictMode";case B:return"Suspense";case ia:return"SuspenseList"}if("object"===typeof a)switch(a.$$typeof){case ea:return"Context.Consumer";case w:return"Context.Provider";case ha:var b=a.render;b=b.displayName||b.name||"";return a.displayName||(""!==b?"ForwardRef("+b+")":"ForwardRef");
@@ -20489,7 +20495,7 @@ var validator = __webpack_require__(188);
 
 var compatibilityFrom = __webpack_require__(189);
 var fetchFrom = __webpack_require__(190);
-var formatFrom = __webpack_require__(41).formatFrom;
+var formatFrom = __webpack_require__(42).formatFrom;
 var inlineFrom = __webpack_require__(196);
 var inlineRequestFrom = __webpack_require__(197);
 var inlineTimeoutFrom = __webpack_require__(198);
@@ -20683,7 +20689,7 @@ var OptimizationLevel = __webpack_require__(21).OptimizationLevel;
 var Token = __webpack_require__(6);
 var Marker = __webpack_require__(10);
 
-var formatPosition = __webpack_require__(42);
+var formatPosition = __webpack_require__(43);
 var split = __webpack_require__(70);
 
 var serializeRules = __webpack_require__(8).rules;
@@ -21732,7 +21738,7 @@ var removeDuplicates = __webpack_require__(184);
 var removeUnusedAtRules = __webpack_require__(185);
 var restructure = __webpack_require__(186);
 
-var optimizeProperties = __webpack_require__(44);
+var optimizeProperties = __webpack_require__(45);
 
 var OptimizationLevel = __webpack_require__(21).OptimizationLevel;
 
@@ -21861,9 +21867,9 @@ module.exports = level2Optimize;
 /* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isMergeable = __webpack_require__(43);
+var isMergeable = __webpack_require__(44);
 
-var optimizeProperties = __webpack_require__(44);
+var optimizeProperties = __webpack_require__(45);
 
 var sortSelectors = __webpack_require__(67);
 var tidyRules = __webpack_require__(68);
@@ -21922,7 +21928,7 @@ var hasInherit = __webpack_require__(90);
 var populateComponents = __webpack_require__(72);
 
 var compactable = __webpack_require__(25);
-var deepClone = __webpack_require__(45).deep;
+var deepClone = __webpack_require__(46).deep;
 var restoreWithComponents = __webpack_require__(73);
 
 var restoreFromOptimizing = __webpack_require__(34);
@@ -22375,7 +22381,7 @@ var wrapSingle = __webpack_require__(30).single;
 var Token = __webpack_require__(6);
 var Marker = __webpack_require__(10);
 
-var formatPosition = __webpack_require__(42);
+var formatPosition = __webpack_require__(43);
 
 function _anyIsInherit(values) {
   var i, l;
@@ -23328,7 +23334,7 @@ module.exports = understandable;
 /* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shallowClone = __webpack_require__(45).shallow;
+var shallowClone = __webpack_require__(46).shallow;
 
 var Token = __webpack_require__(6);
 var Marker = __webpack_require__(10);
@@ -23646,9 +23652,9 @@ var overridesNonComponentShorthand = __webpack_require__(175);
 var sameVendorPrefixesIn = __webpack_require__(92).same;
 
 var compactable = __webpack_require__(25);
-var deepClone = __webpack_require__(45).deep;
+var deepClone = __webpack_require__(46).deep;
 var restoreWithComponents = __webpack_require__(73);
-var shallowClone = __webpack_require__(45).shallow;
+var shallowClone = __webpack_require__(46).shallow;
 
 var restoreFromOptimizing = __webpack_require__(34);
 
@@ -24233,8 +24239,8 @@ module.exports = overridesNonComponentShorthand;
 /* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var canReorder = __webpack_require__(46).canReorder;
-var canReorderSingle = __webpack_require__(46).canReorderSingle;
+var canReorder = __webpack_require__(47).canReorder;
+var canReorderSingle = __webpack_require__(47).canReorderSingle;
 var extractProperties = __webpack_require__(74);
 var rulesOverlap = __webpack_require__(93);
 
@@ -24465,7 +24471,7 @@ module.exports = specificity;
 /* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isMergeable = __webpack_require__(43);
+var isMergeable = __webpack_require__(44);
 
 var sortSelectors = __webpack_require__(67);
 var tidyRules = __webpack_require__(68);
@@ -24551,10 +24557,10 @@ module.exports = mergeNonAdjacentByBody;
 /* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var canReorder = __webpack_require__(46).canReorder;
+var canReorder = __webpack_require__(47).canReorder;
 var extractProperties = __webpack_require__(74);
 
-var optimizeProperties = __webpack_require__(44);
+var optimizeProperties = __webpack_require__(45);
 
 var serializeRules = __webpack_require__(8).rules;
 
@@ -24635,9 +24641,9 @@ module.exports = mergeNonAdjacentBySelector;
 /* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isMergeable = __webpack_require__(43);
+var isMergeable = __webpack_require__(44);
 
-var optimizeProperties = __webpack_require__(44);
+var optimizeProperties = __webpack_require__(45);
 
 var cloneArray = __webpack_require__(94);
 
@@ -25197,9 +25203,9 @@ module.exports = removeUnusedAtRules;
 /* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var canReorderSingle = __webpack_require__(46).canReorderSingle;
+var canReorderSingle = __webpack_require__(47).canReorderSingle;
 var extractProperties = __webpack_require__(74);
-var isMergeable = __webpack_require__(43);
+var isMergeable = __webpack_require__(44);
 var tidyRuleDuplicates = __webpack_require__(187);
 
 var Token = __webpack_require__(6);
@@ -28605,7 +28611,7 @@ var restoreImport = __webpack_require__(102);
 var tokenize = __webpack_require__(216);
 var Token = __webpack_require__(6);
 var Marker = __webpack_require__(10);
-var hasProtocol = __webpack_require__(47);
+var hasProtocol = __webpack_require__(48);
 var isImport = __webpack_require__(103);
 var isRemoteResource = __webpack_require__(36);
 
@@ -28945,7 +28951,7 @@ var rebaseLocalMap = __webpack_require__(99);
 var rebaseRemoteMap = __webpack_require__(100);
 
 var Token = __webpack_require__(6);
-var hasProtocol = __webpack_require__(47);
+var hasProtocol = __webpack_require__(48);
 var isDataUriResource = __webpack_require__(211);
 var isRemoteResource = __webpack_require__(36);
 
@@ -29218,7 +29224,7 @@ var path = __webpack_require__(4);
 
 var isAllowedResource = __webpack_require__(75);
 
-var hasProtocol = __webpack_require__(47);
+var hasProtocol = __webpack_require__(48);
 var isRemoteResource = __webpack_require__(36);
 
 function loadOriginalSources(context, callback) {
@@ -29593,7 +29599,7 @@ module.exports = rewriteUrl;
 var Marker = __webpack_require__(10);
 var Token = __webpack_require__(6);
 
-var formatPosition = __webpack_require__(42);
+var formatPosition = __webpack_require__(43);
 
 var Level = {
   BLOCK: 'block',
@@ -34966,7 +34972,7 @@ const fs = __webpack_require__(9)
 const path = __webpack_require__(4)
 const mkdirpSync = __webpack_require__(16).mkdirsSync
 const utimesSync = __webpack_require__(113).utimesMillisSync
-const stat = __webpack_require__(48)
+const stat = __webpack_require__(49)
 
 function copySync (src, dest, opts) {
   if (typeof opts === 'function') {
@@ -35288,7 +35294,7 @@ const path = __webpack_require__(4)
 const mkdirp = __webpack_require__(16).mkdirs
 const pathExists = __webpack_require__(20).pathExists
 const utimes = __webpack_require__(113).utimesMillis
-const stat = __webpack_require__(48)
+const stat = __webpack_require__(49)
 
 function copy (src, dest, opts, cb) {
   if (typeof opts === 'function' && !cb) {
@@ -35506,7 +35512,7 @@ const u = __webpack_require__(14).fromCallback
 const fs = __webpack_require__(9)
 const path = __webpack_require__(4)
 const mkdir = __webpack_require__(16)
-const remove = __webpack_require__(49)
+const remove = __webpack_require__(50)
 
 const emptyDir = u(function emptyDir (dir, callback) {
   callback = callback || function () {}
@@ -36483,9 +36489,9 @@ module.exports = {
 const fs = __webpack_require__(9)
 const path = __webpack_require__(4)
 const copySync = __webpack_require__(111).copySync
-const removeSync = __webpack_require__(49).removeSync
+const removeSync = __webpack_require__(50).removeSync
 const mkdirpSync = __webpack_require__(16).mkdirpSync
-const stat = __webpack_require__(48)
+const stat = __webpack_require__(49)
 
 function moveSync (src, dest, opts) {
   opts = opts || {}
@@ -36550,10 +36556,10 @@ module.exports = {
 const fs = __webpack_require__(9)
 const path = __webpack_require__(4)
 const copy = __webpack_require__(114).copy
-const remove = __webpack_require__(49).remove
+const remove = __webpack_require__(50).remove
 const mkdirp = __webpack_require__(16).mkdirp
 const pathExists = __webpack_require__(20).pathExists
-const stat = __webpack_require__(48)
+const stat = __webpack_require__(49)
 
 function move (src, dest, opts, cb) {
   if (typeof opts === 'function') {
@@ -36798,6 +36804,13 @@ function pointerCoord(event) {
 /* 279 */
 /***/ (function(module, exports) {
 
+// Exports
+module.exports = {
+	"heroBanner": "heroBanner_2Ftp",
+	"buttons": "buttons_1Wc3",
+	"features": "features_P2SU",
+	"featureImage": "featureImage_3Xqx"
+};
 
 
 /***/ }),
@@ -36814,14 +36827,20 @@ function pointerCoord(event) {
 
 /***/ }),
 /* 282 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 283 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prism_react_renderer_prism__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31);
-/* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54);
+/* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(55);
 /* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _generated_docusaurus_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(61);
+/* harmony import */ var _generated_docusaurus_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -36831,11 +36850,11 @@ __webpack_require__.r(__webpack_exports__);
 });delete window.Prism;}})();
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const components = __webpack_require__(284);
-const getLoader = __webpack_require__(285);
+const components = __webpack_require__(285);
+const getLoader = __webpack_require__(286);
 
 
 /**
@@ -36893,14 +36912,14 @@ module.exports = loadLanguages;
 
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var components = {"core":{"meta":{"path":"components/prism-core.js","option":"mandatory"},"core":"Core"},"themes":{"meta":{"path":"themes/{id}.css","link":"index.html?theme={id}","exclusive":true},"prism":{"title":"Default","option":"default"},"prism-dark":"Dark","prism-funky":"Funky","prism-okaidia":{"title":"Okaidia","owner":"ocodia"},"prism-twilight":{"title":"Twilight","owner":"remybach"},"prism-coy":{"title":"Coy","owner":"tshedor"},"prism-solarizedlight":{"title":"Solarized Light","owner":"hectormatos2011 "},"prism-tomorrow":{"title":"Tomorrow Night","owner":"Rosey"}},"languages":{"meta":{"path":"components/prism-{id}","noCSS":true,"examplesPath":"examples/prism-{id}","addCheckAll":true},"markup":{"title":"Markup","alias":["html","xml","svg","mathml"],"aliasTitles":{"html":"HTML","xml":"XML","svg":"SVG","mathml":"MathML"},"option":"default"},"css":{"title":"CSS","option":"default","modify":"markup"},"clike":{"title":"C-like","option":"default"},"javascript":{"title":"JavaScript","require":"clike","modify":"markup","alias":"js","option":"default"},"abap":{"title":"ABAP","owner":"dellagustin"},"abnf":{"title":"Augmented Backus–Naur form","owner":"RunDevelopment"},"actionscript":{"title":"ActionScript","require":"javascript","modify":"markup","owner":"Golmote"},"ada":{"title":"Ada","owner":"Lucretia"},"antlr4":{"title":"ANTLR4","alias":"g4","owner":"RunDevelopment"},"apacheconf":{"title":"Apache Configuration","owner":"GuiTeK"},"apl":{"title":"APL","owner":"ngn"},"applescript":{"title":"AppleScript","owner":"Golmote"},"aql":{"title":"AQL","owner":"RunDevelopment"},"arduino":{"title":"Arduino","require":"cpp","owner":"eisbehr-"},"arff":{"title":"ARFF","owner":"Golmote"},"asciidoc":{"alias":"adoc","title":"AsciiDoc","owner":"Golmote"},"asm6502":{"title":"6502 Assembly","owner":"kzurawel"},"aspnet":{"title":"ASP.NET (C#)","require":["markup","csharp"],"owner":"nauzilus"},"autohotkey":{"title":"AutoHotkey","owner":"aviaryan"},"autoit":{"title":"AutoIt","owner":"Golmote"},"bash":{"title":"Bash","alias":"shell","aliasTitles":{"shell":"Shell"},"owner":"zeitgeist87"},"basic":{"title":"BASIC","owner":"Golmote"},"batch":{"title":"Batch","owner":"Golmote"},"bbcode":{"title":"BBcode","alias":"shortcode","aliasTitles":{"shortcode":"Shortcode"},"owner":"RunDevelopment"},"bison":{"title":"Bison","require":"c","owner":"Golmote"},"bnf":{"title":"Backus–Naur form","alias":"rbnf","aliasTitles":{"rbnf":"Routing Backus–Naur form"},"owner":"RunDevelopment"},"brainfuck":{"title":"Brainfuck","owner":"Golmote"},"brightscript":{"title":"BrightScript","owner":"RunDevelopment"},"bro":{"title":"Bro","owner":"wayward710"},"c":{"title":"C","require":"clike","owner":"zeitgeist87"},"concurnas":{"title":"Concurnas","alias":"conc","owner":"jasontatton"},"csharp":{"title":"C#","require":"clike","alias":["cs","dotnet"],"owner":"mvalipour"},"cpp":{"title":"C++","require":"c","owner":"zeitgeist87"},"cil":{"title":"CIL","owner":"sbrl"},"coffeescript":{"title":"CoffeeScript","require":"javascript","alias":"coffee","owner":"R-osey"},"cmake":{"title":"CMake","owner":"mjrogozinski"},"clojure":{"title":"Clojure","owner":"troglotit"},"crystal":{"title":"Crystal","require":"ruby","owner":"MakeNowJust"},"csp":{"title":"Content-Security-Policy","owner":"ScottHelme"},"css-extras":{"title":"CSS Extras","require":"css","modify":"css","owner":"milesj"},"d":{"title":"D","require":"clike","owner":"Golmote"},"dart":{"title":"Dart","require":"clike","owner":"Golmote"},"dax":{"title":"DAX","owner":"peterbud"},"diff":{"title":"Diff","owner":"uranusjr"},"django":{"title":"Django/Jinja2","require":"markup-templating","alias":"jinja2","owner":"romanvm"},"dns-zone-file":{"title":"DNS zone file","owner":"RunDevelopment","alias":"dns-zone"},"docker":{"title":"Docker","alias":"dockerfile","owner":"JustinBeckwith"},"ebnf":{"title":"Extended Backus–Naur form","owner":"RunDevelopment"},"eiffel":{"title":"Eiffel","owner":"Conaclos"},"ejs":{"title":"EJS","require":["javascript","markup-templating"],"owner":"RunDevelopment"},"elixir":{"title":"Elixir","owner":"Golmote"},"elm":{"title":"Elm","owner":"zwilias"},"etlua":{"title":"Embedded Lua templating","require":["lua","markup-templating"],"owner":"RunDevelopment"},"erb":{"title":"ERB","require":["ruby","markup-templating"],"owner":"Golmote"},"erlang":{"title":"Erlang","owner":"Golmote"},"excel-formula":{"title":"Excel Formula","alias":["xlsx","xls"],"owner":"RunDevelopment"},"fsharp":{"title":"F#","require":"clike","owner":"simonreynolds7"},"factor":{"title":"Factor","owner":"catb0t"},"firestore-security-rules":{"title":"Firestore security rules","require":"clike","owner":"RunDevelopment"},"flow":{"title":"Flow","require":"javascript","owner":"Golmote"},"fortran":{"title":"Fortran","owner":"Golmote"},"ftl":{"title":"FreeMarker Template Language","require":"markup-templating","owner":"RunDevelopment"},"gcode":{"title":"G-code","owner":"RunDevelopment"},"gdscript":{"title":"GDScript","owner":"RunDevelopment"},"gedcom":{"title":"GEDCOM","owner":"Golmote"},"gherkin":{"title":"Gherkin","owner":"hason"},"git":{"title":"Git","owner":"lgiraudel"},"glsl":{"title":"GLSL","require":"clike","owner":"Golmote"},"gml":{"title":"GameMaker Language","alias":"gamemakerlanguage","require":"clike","owner":"LiarOnce"},"go":{"title":"Go","require":"clike","owner":"arnehormann"},"graphql":{"title":"GraphQL","owner":"Golmote"},"groovy":{"title":"Groovy","require":"clike","owner":"robfletcher"},"haml":{"title":"Haml","require":"ruby","optional":["css","css-extras","coffeescript","erb","javascript","less","markdown","scss","textile"],"owner":"Golmote"},"handlebars":{"title":"Handlebars","require":"markup-templating","owner":"Golmote"},"haskell":{"title":"Haskell","alias":"hs","owner":"bholst"},"haxe":{"title":"Haxe","require":"clike","owner":"Golmote"},"hcl":{"title":"HCL","owner":"outsideris"},"http":{"title":"HTTP","optional":["css","javascript","json","markup"],"owner":"danielgtaylor"},"hpkp":{"title":"HTTP Public-Key-Pins","owner":"ScottHelme"},"hsts":{"title":"HTTP Strict-Transport-Security","owner":"ScottHelme"},"ichigojam":{"title":"IchigoJam","owner":"BlueCocoa"},"icon":{"title":"Icon","owner":"Golmote"},"inform7":{"title":"Inform 7","owner":"Golmote"},"ini":{"title":"Ini","owner":"aviaryan"},"io":{"title":"Io","owner":"AlesTsurko"},"j":{"title":"J","owner":"Golmote"},"java":{"title":"Java","require":"clike","owner":"sherblot"},"javadoc":{"title":"JavaDoc","require":["markup","java","javadoclike"],"modify":"java","optional":"scala","owner":"RunDevelopment"},"javadoclike":{"title":"JavaDoc-like","modify":["java","javascript","php"],"owner":"RunDevelopment"},"javastacktrace":{"title":"Java stack trace","owner":"RunDevelopment"},"jolie":{"title":"Jolie","require":"clike","owner":"thesave"},"jq":{"title":"JQ","owner":"RunDevelopment"},"jsdoc":{"title":"JSDoc","require":["javascript","javadoclike"],"modify":"javascript","optional":["actionscript","coffeescript"],"owner":"RunDevelopment"},"js-extras":{"title":"JS Extras","require":"javascript","modify":"javascript","optional":["actionscript","coffeescript","flow","n4js","typescript"],"owner":"RunDevelopment"},"js-templates":{"title":"JS Templates","require":"javascript","modify":"javascript","optional":["css","css-extras","graphql","markdown","markup"],"owner":"RunDevelopment"},"json":{"title":"JSON","owner":"CupOfTea696"},"jsonp":{"title":"JSONP","require":"json","owner":"RunDevelopment"},"json5":{"title":"JSON5","require":"json","owner":"RunDevelopment"},"julia":{"title":"Julia","owner":"cdagnino"},"keyman":{"title":"Keyman","owner":"mcdurdin"},"kotlin":{"title":"Kotlin","require":"clike","owner":"Golmote"},"latex":{"title":"LaTeX","alias":["tex","context"],"aliasTitles":{"tex":"TeX","context":"ConTeXt"},"owner":"japborst"},"latte":{"title":"Latte","require":["clike","markup-templating","php"],"owner":"nette"},"less":{"title":"Less","require":"css","optional":"css-extras","owner":"Golmote"},"lilypond":{"title":"LilyPond","require":"scheme","alias":"ly","owner":"RunDevelopment"},"liquid":{"title":"Liquid","owner":"cinhtau"},"lisp":{"title":"Lisp","alias":["emacs","elisp","emacs-lisp"],"owner":"JuanCaicedo"},"livescript":{"title":"LiveScript","owner":"Golmote"},"llvm":{"title":"LLVM IR","owner":"porglezomp"},"lolcode":{"title":"LOLCODE","owner":"Golmote"},"lua":{"title":"Lua","owner":"Golmote"},"makefile":{"title":"Makefile","owner":"Golmote"},"markdown":{"title":"Markdown","require":"markup","alias":"md","owner":"Golmote"},"markup-templating":{"title":"Markup templating","require":"markup","owner":"Golmote"},"matlab":{"title":"MATLAB","owner":"Golmote"},"mel":{"title":"MEL","owner":"Golmote"},"mizar":{"title":"Mizar","owner":"Golmote"},"monkey":{"title":"Monkey","owner":"Golmote"},"moonscript":{"title":"MoonScript","alias":"moon","owner":"RunDevelopment"},"n1ql":{"title":"N1QL","owner":"TMWilds"},"n4js":{"title":"N4JS","require":"javascript","optional":"jsdoc","alias":"n4jsd","owner":"bsmith-n4"},"nand2tetris-hdl":{"title":"Nand To Tetris HDL","owner":"stephanmax"},"nasm":{"title":"NASM","owner":"rbmj"},"neon":{"title":"NEON","owner":"nette"},"nginx":{"title":"nginx","owner":"westonganger","require":"clike"},"nim":{"title":"Nim","owner":"Golmote"},"nix":{"title":"Nix","owner":"Golmote"},"nsis":{"title":"NSIS","owner":"idleberg"},"objectivec":{"title":"Objective-C","require":"c","owner":"uranusjr"},"ocaml":{"title":"OCaml","owner":"Golmote"},"opencl":{"title":"OpenCL","require":"c","modify":["c","cpp"],"owner":"Milania1"},"oz":{"title":"Oz","owner":"Golmote"},"parigp":{"title":"PARI/GP","owner":"Golmote"},"parser":{"title":"Parser","require":"markup","owner":"Golmote"},"pascal":{"title":"Pascal","alias":"objectpascal","aliasTitles":{"objectpascal":"Object Pascal"},"owner":"Golmote"},"pascaligo":{"title":"Pascaligo","owner":"DefinitelyNotAGoat"},"pcaxis":{"title":"PC-Axis","alias":"px","owner":"RunDevelopment"},"perl":{"title":"Perl","owner":"Golmote"},"php":{"title":"PHP","require":["clike","markup-templating"],"owner":"milesj"},"phpdoc":{"title":"PHPDoc","require":["php","javadoclike"],"modify":"php","owner":"RunDevelopment"},"php-extras":{"title":"PHP Extras","require":"php","modify":"php","owner":"milesj"},"plsql":{"title":"PL/SQL","require":"sql","owner":"Golmote"},"powerquery":{"title":"PowerQuery","alias":["pq","mscript"],"owner":"peterbud"},"powershell":{"title":"PowerShell","owner":"nauzilus"},"processing":{"title":"Processing","require":"clike","owner":"Golmote"},"prolog":{"title":"Prolog","owner":"Golmote"},"properties":{"title":".properties","owner":"Golmote"},"protobuf":{"title":"Protocol Buffers","require":"clike","owner":"just-boris"},"pug":{"title":"Pug","require":["markup","javascript"],"optional":["coffeescript","ejs","handlebars","less","livescript","markdown","scss","stylus","twig"],"owner":"Golmote"},"puppet":{"title":"Puppet","owner":"Golmote"},"pure":{"title":"Pure","optional":["c","cpp","fortran"],"owner":"Golmote"},"python":{"title":"Python","alias":"py","owner":"multipetros"},"q":{"title":"Q (kdb+ database)","owner":"Golmote"},"qml":{"title":"QML","require":"javascript","owner":"RunDevelopment"},"qore":{"title":"Qore","require":"clike","owner":"temnroegg"},"r":{"title":"R","owner":"Golmote"},"jsx":{"title":"React JSX","require":["markup","javascript"],"optional":["jsdoc","js-extras","js-templates"],"owner":"vkbansal"},"tsx":{"title":"React TSX","require":["jsx","typescript"]},"renpy":{"title":"Ren'py","owner":"HyuchiaDiego"},"reason":{"title":"Reason","require":"clike","owner":"Golmote"},"regex":{"title":"Regex","modify":["actionscript","coffeescript","flow","javascript","typescript","vala"],"owner":"RunDevelopment"},"rest":{"title":"reST (reStructuredText)","owner":"Golmote"},"rip":{"title":"Rip","owner":"ravinggenius"},"roboconf":{"title":"Roboconf","owner":"Golmote"},"robotframework":{"title":"Robot Framework","alias":"robot","owner":"RunDevelopment"},"ruby":{"title":"Ruby","require":"clike","alias":"rb","owner":"samflores"},"rust":{"title":"Rust","owner":"Golmote"},"sas":{"title":"SAS","optional":["groovy","lua","sql"],"owner":"Golmote"},"sass":{"title":"Sass (Sass)","require":"css","owner":"Golmote"},"scss":{"title":"Sass (Scss)","require":"css","optional":"css-extras","owner":"MoOx"},"scala":{"title":"Scala","require":"java","owner":"jozic"},"scheme":{"title":"Scheme","owner":"bacchus123"},"shell-session":{"title":"Shell session","require":"bash","owner":"RunDevelopment"},"smalltalk":{"title":"Smalltalk","owner":"Golmote"},"smarty":{"title":"Smarty","require":"markup-templating","owner":"Golmote"},"solidity":{"title":"Solidity (Ethereum)","require":"clike","owner":"glachaud"},"solution-file":{"title":"Solution file","alias":"sln","owner":"RunDevelopment"},"soy":{"title":"Soy (Closure Template)","require":"markup-templating","owner":"Golmote"},"sparql":{"title":"SPARQL","require":"turtle","owner":"Triply-Dev","alias":"rq"},"splunk-spl":{"title":"Splunk SPL","owner":"RunDevelopment"},"sqf":{"title":"SQF: Status Quo Function (Arma 3)","require":"clike","owner":"RunDevelopment"},"sql":{"title":"SQL","owner":"multipetros"},"stylus":{"title":"Stylus","owner":"vkbansal"},"swift":{"title":"Swift","require":"clike","owner":"chrischares"},"tap":{"title":"TAP","owner":"isaacs","require":"yaml"},"tcl":{"title":"Tcl","owner":"PeterChaplin"},"textile":{"title":"Textile","require":"markup","optional":"css","owner":"Golmote"},"toml":{"title":"TOML","owner":"RunDevelopment"},"tt2":{"title":"Template Toolkit 2","require":["clike","markup-templating"],"owner":"gflohr"},"turtle":{"title":"Turtle","alias":"trig","aliasTitles":{"trig":"TriG"},"owner":"jakubklimek"},"twig":{"title":"Twig","require":"markup","owner":"brandonkelly"},"typescript":{"title":"TypeScript","require":"javascript","optional":"js-templates","alias":"ts","owner":"vkbansal"},"t4-cs":{"title":"T4 Text Templates (C#)","require":["t4-templating","csharp"],"alias":"t4","owner":"RunDevelopment"},"t4-vb":{"title":"T4 Text Templates (VB)","require":["t4-templating","visual-basic"],"owner":"RunDevelopment"},"t4-templating":{"title":"T4 templating","owner":"RunDevelopment"},"vala":{"title":"Vala","require":"clike","owner":"TemplarVolk"},"vbnet":{"title":"VB.Net","require":"basic","owner":"Bigsby"},"velocity":{"title":"Velocity","require":"markup","owner":"Golmote"},"verilog":{"title":"Verilog","owner":"a-rey"},"vhdl":{"title":"VHDL","owner":"a-rey"},"vim":{"title":"vim","owner":"westonganger"},"visual-basic":{"title":"Visual Basic","alias":"vb","owner":"Golmote"},"wasm":{"title":"WebAssembly","owner":"Golmote"},"wiki":{"title":"Wiki markup","require":"markup","owner":"Golmote"},"xeora":{"title":"Xeora","require":"markup","alias":"xeoracube","aliasTitles":{"xeoracube":"XeoraCube"},"owner":"freakmaxi"},"xojo":{"title":"Xojo (REALbasic)","owner":"Golmote"},"xquery":{"title":"XQuery","require":"markup","owner":"Golmote"},"yaml":{"title":"YAML","alias":"yml","owner":"hason"},"zig":{"title":"Zig","owner":"RunDevelopment"}},"plugins":{"meta":{"path":"plugins/{id}/prism-{id}","link":"plugins/{id}/"},"line-highlight":{"title":"Line Highlight","description":"Highlights specific lines and/or line ranges."},"line-numbers":{"title":"Line Numbers","description":"Line number at the beginning of code lines.","owner":"kuba-kubula"},"show-invisibles":{"title":"Show Invisibles","description":"Show hidden characters such as tabs and line breaks.","optional":["autolinker","data-uri-highlight"]},"autolinker":{"title":"Autolinker","description":"Converts URLs and emails in code to clickable links. Parses Markdown links in comments."},"wpd":{"title":"WebPlatform Docs","description":"Makes tokens link to <a href=\"https://webplatform.github.io/docs/\">WebPlatform.org documentation</a>. The links open in a new tab."},"custom-class":{"title":"Custom Class","description":"This plugin allows you to prefix Prism's default classes (<code>.comment</code> can become <code>.namespace--comment</code>) or replace them with your defined ones (like <code>.editor__comment</code>). You can even add new classes.","owner":"dvkndn","noCSS":true},"file-highlight":{"title":"File Highlight","description":"Fetch external files and highlight them with Prism. Used on the Prism website itself.","noCSS":true},"show-language":{"title":"Show Language","description":"Display the highlighted language in code blocks (inline code does not show the label).","owner":"nauzilus","noCSS":true,"require":"toolbar"},"jsonp-highlight":{"title":"JSONP Highlight","description":"Fetch content with JSONP and highlight some interesting content (e.g. GitHub/Gists or Bitbucket API).","noCSS":true,"owner":"nauzilus"},"highlight-keywords":{"title":"Highlight Keywords","description":"Adds special CSS classes for each keyword matched in the code. For example, the keyword <code>if</code> will have the class <code>keyword-if</code> as well. You can have fine grained control over the appearance of each keyword by providing your own CSS rules.","owner":"vkbansal","noCSS":true},"remove-initial-line-feed":{"title":"Remove initial line feed","description":"Removes the initial line feed in code blocks.","owner":"Golmote","noCSS":true},"inline-color":{"title":"Inline color","description":"Adds a small inline preview for colors in style sheets.","require":"css-extras","owner":"RunDevelopment"},"previewers":{"title":"Previewers","description":"Previewers for angles, colors, gradients, easing and time.","require":"css-extras","owner":"Golmote"},"autoloader":{"title":"Autoloader","description":"Automatically loads the needed languages to highlight the code blocks.","owner":"Golmote","noCSS":true},"keep-markup":{"title":"Keep Markup","description":"Prevents custom markup from being dropped out during highlighting.","owner":"Golmote","optional":"normalize-whitespace","noCSS":true},"command-line":{"title":"Command Line","description":"Display a command line with a prompt and, optionally, the output/response from the commands.","owner":"chriswells0"},"unescaped-markup":{"title":"Unescaped Markup","description":"Write markup without having to escape anything."},"normalize-whitespace":{"title":"Normalize Whitespace","description":"Supports multiple operations to normalize whitespace in code blocks.","owner":"zeitgeist87","optional":"unescaped-markup","noCSS":true},"data-uri-highlight":{"title":"Data-URI Highlight","description":"Highlights data-URI contents.","owner":"Golmote","noCSS":true},"toolbar":{"title":"Toolbar","description":"Attach a toolbar for plugins to easily register buttons on the top of a code block.","owner":"mAAdhaTTah"},"copy-to-clipboard":{"title":"Copy to Clipboard Button","description":"Add a button that copies the code block to the clipboard when clicked.","owner":"mAAdhaTTah","require":"toolbar","noCSS":true},"download-button":{"title":"Download Button","description":"A button in the toolbar of a code block adding a convenient way to download a code file.","owner":"Golmote","require":"toolbar","noCSS":true},"match-braces":{"title":"Match braces","description":"Highlights matching braces.","owner":"RunDevelopment"},"diff-highlight":{"title":"Diff Highlight","description":"Highlights the code inside diff blocks.","owner":"RunDevelopment","require":"diff"},"filter-highlight-all":{"title":"Filter highlightAll","description":"Filters the elements the <code>highlightAll</code> and <code>highlightAllUnder</code> methods actually highlight.","owner":"RunDevelopment","noCSS":true},"treeview":{"title":"Treeview","description":"A language with special styles to highlight file system tree structures.","owner":"Golmote"}}};
 if ( true && module.exports) { module.exports = components; }
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37357,13 +37376,13 @@ if (true) {
 
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37389,13 +37408,13 @@ var server = __webpack_require__(125);
 var server_default = /*#__PURE__*/__webpack_require__.n(server);
 
 // EXTERNAL MODULE: ./node_modules/react-helmet/es/Helmet.js
-var Helmet = __webpack_require__(51);
+var Helmet = __webpack_require__(52);
 
 // EXTERNAL MODULE: ./node_modules/react-loadable-ssr-addon/lib/index.js
 var lib = __webpack_require__(128);
 
 // EXTERNAL MODULE: ./node_modules/react-loadable/lib/index.js
-var react_loadable_lib = __webpack_require__(38);
+var react_loadable_lib = __webpack_require__(39);
 var react_loadable_lib_default = /*#__PURE__*/__webpack_require__.n(react_loadable_lib);
 
 // EXTERNAL MODULE: ./node_modules/html-minifier-terser/src/htmlminifier.js
@@ -37526,7 +37545,7 @@ const loadedModules=JSON.parse(JSON.stringify(chunkNames));Object.keys(loaded).f
 var core_package = __webpack_require__(140);
 
 // EXTERNAL MODULE: ./node_modules/react-router-config/esm/react-router-config.js
-var react_router_config = __webpack_require__(56);
+var react_router_config = __webpack_require__(57);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/preload.js
 /**
@@ -37543,20 +37562,20 @@ var react_router_config = __webpack_require__(56);
  * @returns {Promise} Promise object represents whether pathname has been preloaded
  */function preload(routes,pathname){const matches=Object(react_router_config["a" /* matchRoutes */])(routes,pathname);return Promise.all(matches.map(match=>{const{component}=match.route;if(component&&component.preload){return component.preload();}return undefined;}));}
 // EXTERNAL MODULE: ./.docusaurus/docusaurus.config.js
-var docusaurus_config = __webpack_require__(61);
+var docusaurus_config = __webpack_require__(62);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/renderRoutes.js
-var renderRoutes = __webpack_require__(55);
+var renderRoutes = __webpack_require__(56);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/context.js
-var exports_context = __webpack_require__(53);
+var exports_context = __webpack_require__(54);
 
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.js
 var nprogress = __webpack_require__(65);
 var nprogress_default = /*#__PURE__*/__webpack_require__.n(nprogress);
 
 // CONCATENATED MODULE: ./.docusaurus/client-modules.js
-/* harmony default export */ var client_modules = ([__webpack_require__(279),__webpack_require__(280),__webpack_require__(281),__webpack_require__(282)]);
+/* harmony default export */ var client_modules = ([__webpack_require__(280),__webpack_require__(281),__webpack_require__(282),__webpack_require__(283)]);
 // CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/client-lifecycles-dispatcher.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -37578,7 +37597,7 @@ lifecycles[lifecycleAction]=function(...args){dispatchLifecycleAction(lifecycleA
  */ // Memoize previously normalized pathnames.
 const pathnames={};function normalizeLocation(location){if(pathnames[location.pathname]){return{...location,pathname:pathnames[location.pathname]};}let pathname=location.pathname||'/';pathname=pathname.trim().replace(/\/index\.html$/,'');if(pathname===''){pathname='/';}pathnames[location.pathname]=pathname;return{...location,pathname};}/* harmony default export */ var client_normalizeLocation = (normalizeLocation);
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
-var nprogress_nprogress = __webpack_require__(286);
+var nprogress_nprogress = __webpack_require__(287);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/PendingNavigation.js
 /**
