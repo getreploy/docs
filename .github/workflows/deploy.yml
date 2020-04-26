@@ -1,0 +1,73 @@
+name: Build and Deploy The Reploy CLI
+
+on: push
+
+# Environment variables available to all jobs and steps in this workflow
+env:
+  GKE_PROJECT: ${{ secrets.GKE_PROJECT }}
+  GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
+  GITHUB_SHA: ${{ github.sha }}
+  GKE_ZONE: us-central1-a
+  DOCKER_BUILDKIT: 1
+  GKE_CLUSTER: web-cluster
+
+jobs:
+  run:
+    name: Run Docs Build
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/master'
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@master
+
+    # Configure docker to use the gcloud command-line tool as a credential helper
+    - name: Install Nodejs
+      uses: actions/setup-node@v1
+      with:
+        registry-url: 'https://registry.npmjs.org'
+
+    # Configure docker to use the gcloud command-line tool as a credential helper
+    - run: |
+        npm config set unsafe-perm true
+
+    - run: |
+        npm install
+
+    - run: |
+        npm run build
+
+  deploy:
+    name: Deploy Docs
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@master
+
+    # Setup gcloud CLI
+    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        version: '270.0.0'
+        service_account_email: ${{ secrets.GKE_EMAIL }}
+        service_account_key: ${{ secrets.GKE_KEY }}
+
+    # Configure docker to use the gcloud command-line tool as a credential helper
+    - name: Install Nodejs
+      uses: actions/setup-node@v1
+      with:
+        registry-url: 'https://registry.npmjs.org'
+
+    # Configure docker to use the gcloud command-line tool as a credential helper
+    - run: |
+        npm config set unsafe-perm true
+
+    - run: |
+        npm install
+
+    - run: |
+        npm run build
+
+    - name: Upload bundle
+      run: gsutil cp -r build/* gs://docs.getreploy.com
