@@ -44,9 +44,6 @@ jobs:
         npm config set unsafe-perm true
 
     - run: |
-        npm install -g typescript@latest
-
-    - run: |
         npm install
 
     - run: |
