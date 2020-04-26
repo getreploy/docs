@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{108:function(n,t,e){"use strict";e.r(t);var c=e(0),o=e.n(c),a=(e(115),e(120),e(117),e(114)),s=e(116),i=(e(109),e(2));t.default=function(){const n=Object(a.a)(),{siteConfig:t={}}=n;return o.a.createElement(i.a,{to:Object(s.a)("docs/doc1")})}}}]);
