@@ -3,7 +3,7 @@ module.exports = {
   tagline: '',
   url: 'https://getreploy.com',
   baseUrl: '/',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   organizationName: 'getreploy', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   themeConfig: {

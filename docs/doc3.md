@@ -1,14 +1,99 @@
 ---
 id: doc3
-title: This is Document Number 3
+title: Set up a Project (reploy.yml)
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac euismod odio, eu consequat dui. Nullam molestie consectetur risus id imperdiet. Proin sodales ornare turpis, non mollis massa ultricies id. Nam at nibh scelerisque, feugiat ante non, dapibus tortor. Vivamus volutpat diam quis tellus elementum bibendum. Praesent semper gravida velit quis aliquam. Etiam in cursus neque. Nam lectus ligula, malesuada et mauris a, bibendum faucibus mi. Phasellus ut interdum felis. Phasellus in odio pulvinar, porttitor urna eget, fringilla lectus. Aliquam sollicitudin est eros. Mauris consectetur quam vitae mauris interdum hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+## Get the Reploy project's ID
+Before we define the `reploy.yml` file in the project's root directory, you'll will need to create a Reploy project online on the web app and get it's ID.
 
-Duis et egestas libero, imperdiet faucibus ipsum. Sed posuere eget urna vel feugiat. Vivamus a arcu sagittis, fermentum urna dapibus, congue lectus. Fusce vulputate porttitor nisl, ac cursus elit volutpat vitae. Nullam vitae ipsum egestas, convallis quam non, porta nibh. Morbi gravida erat nec neque bibendum, eu pellentesque velit posuere. Fusce aliquam erat eu massa eleifend tristique.
+## Structure
 
-Sed consequat sollicitudin ipsum eget tempus. Integer a aliquet velit. In justo nibh, pellentesque non suscipit eget, gravida vel lacus. Donec odio ante, malesuada in massa quis, pharetra tristique ligula. Donec eros est, tristique eget finibus quis, semper non nisl. Vivamus et elit nec enim ornare placerat. Sed posuere odio a elit cursus sagittis.
+A `reploy.yml` is a YAML file placed in the project's root directory and is used to configure a Reploy project (including its corresponding services and dependencies). To maintain familiarity, it is similar to docker compose in structure.
 
-Phasellus feugiat purus eu tortor ultrices finibus. Ut libero nibh, lobortis et libero nec, dapibus posuere eros. Sed sagittis euismod justo at consectetur. Nulla finibus libero placerat, cursus sapien at, eleifend ligula. Vivamus elit nisl, hendrerit ac nibh eu, ultrices tempus dui. Nam tellus neque, commodo non rhoncus eu, gravida in risus. Nullam id iaculis tortor.
+A full sample is in the next section but here's a brief example:
+```yaml
+id: yougetthisfromthewebapp
+services:
+  service-name: #name of the service
+    relative-path: ./backend #this service will be used for all commands being executed in any sub-directory of `backend`
+    port: 0000 # port that needs to be exposed
+    port-forward: true # port-forwarding to your local machine
+    image: dockerhub.com/image #link to the docker image
+    environment: # environment variables
+      KEY: 'val'
+    secret:
+      - SECRET_KEY # value stored in reploy's web app
+```
+The various aspects of a service are
 
-Nullam at odio in sem varius tempor sit amet vel lorem. Etiam eu hendrerit nisl. Fusce nibh mauris, vulputate sit amet ex vitae, congue rhoncus nisl. Sed eget tellus purus. Nullam tempus commodo erat ut tristique. Cras accumsan massa sit amet justo consequat eleifend. Integer scelerisque vitae tellus id consectetur.
+
+| Name            | Default Value | Comments                                                                                                                                                                                                                             |
+|-----------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| service-name    | REQUIRED      | User defined name of the service e.g. `frontend`, `cache`, `database`                                                                                                                                                                |
+| image           | REQUIRED      | Link to the docker image                                                                                                                                                                                                             |
+| relative-path   | OPTIONAL      | Reploy commands executed in any sub-directories of this path will use this service                                                                                                                                                   |
+| port            | OPTIONAL      | Port that the service uses and needs to be exposed                                                                                                                                                                                   |
+| environment     | OPTIONAL      | A list of environment variables accessible by the service                                                                                                                                                                            |
+| secret          | OPTIONAL      | A list of secrets accessible by the service. the values of these secrets are defined in the web app                                                                                                                                  |
+| port-forward    | false         | Decides whether to port-forward to your local machine                                                                                                                                                                                |
+| bypass-sync     | false         | Decouples syncing of file state with command execution i.e. decides whether to wait for file sync to finish before executing commands. can be true for services like cache and databases which do not have an associated file state. |
+| ignore-all-args | false         | When false, we pass default args to the docker container to keep it alive. however, if you'd like for us to not send any args to the docker container to prevent overriding any args you might have specified, turn this off.        |
+
+
+
+
+
+
+
+## Sample reploy.yml
+Consider a sample directory tree for a project
+```
+project_root # root directory of your project (home of the .git directory)
+├── web-backend
+│   └── main.go
+├── web-frontend
+│   └── package.json
+│   └── main.js
+├── ...
+```
+and its corresponding `reploy.yml` file
+```yaml
+id: yougetthisfromthewebapp
+services:
+  web-backend:
+    relative-path: ./web-backend
+    port: 8080
+    port-forward: true
+    image: gcr.io/himank-jay/polyglott-go:v1
+    environment:
+      PSQL_PASSWORD: 'postgres'
+      PSQL_USER: 'default'
+      PSQL_HOST: '0.0.0.0'
+  database:
+    port: 5432
+    port-forward: true
+    bypass-sync: true
+    ignore-all-args: true
+    image: gcr.io/himank-jay/postgres:v1
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_USER: 'default'
+  cache:
+    port: 6379
+    port-forward: true
+    bypass-sync: true
+    ignore-all-args: true
+    image: gcr.io/himank-jay/redis:v1
+  web-frontend:
+    port: 3000
+    port-forward: true
+    relative-path: ./web-frontend
+    image: gcr.io/himank-jay/polyglott-nodejs:v1
+    environment:
+      CHOKIDAR_USEPOLLING: true
+    secrets:
+      - REACT_APP_FIREBASE_API_KEY
+      - REACT_APP_FIREBASE_AUTH_DOMAIN
+      - REACT_APP_FIREBASE_DATABASE_URL
+      - REACT_APP_BACKEND_URL
+```
