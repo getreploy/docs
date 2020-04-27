@@ -1,3 +1,3 @@
 module.exports = {
-  someSidebar: ["installation", "getting-started", "doc3"]
+  someSidebar: ["installation", "getting-started", "project-setup"]
 };

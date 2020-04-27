@@ -1,7 +1,7 @@
 module.exports = {
   title: "Reploy",
   tagline: "",
-  url: "https://getreploy.com",
+  url: "https://docs.getreploy.com",
   baseUrl: "/",
   favicon: "img/favicon.png",
   organizationName: "getreploy", // Usually your GitHub org/user name.
