@@ -21,7 +21,7 @@ The command line tool with then instruct you with further steps.
 Depending on what your situation looks like, there are a few options for getting started with a reploy project:
 - If a reploy project has already been set up for your team (i.e if a `reploy.yml` file exists in your project's root directory), you should be good to go.
 - If you don't have a reploy project setup, and you wanna get a quick tast of what reploy is like, use our fullstack sample app [here](https://github.com/getreploy/fullstack-sample)
-- If you'd like to setup your own project, you can do that [here](doc3.md).
+- If you'd like to setup your own project, you can do that [here](project-setup.md).
 
 ## Executing Commands
 

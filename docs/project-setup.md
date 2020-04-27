@@ -1,6 +1,6 @@
 ---
-id: doc3
-title: Set up a Project (reploy.yml)
+id: project-setup
+title: Project Setup
 ---
 
 ## Get the Reploy project's ID
@@ -10,24 +10,24 @@ Before we define the `reploy.yml` file in the project's root directory, you'll w
 
 A `reploy.yml` is a YAML file placed in the project's root directory and is used to configure a Reploy project (including its corresponding services and dependencies). To maintain familiarity, it is similar to docker compose in structure.
 
-A full sample is in the next section but here's a brief example:
+A full sample is in the next section but here's a brief example for reference:
 ```yaml
-id: yougetthisfromthewebapp
+id: <id-from-authentication>
 services:
-  service-name: #name of the service
-    relative-path: ./backend #this service will be used for all commands being executed in any sub-directory of `backend`
-    port: 0000 # port that needs to be exposed
-    port-forward: true # port-forwarding to your local machine
-    image: dockerhub.com/image #link to the docker image
-    environment: # environment variables
+  my-service:
+    relative-path: ./backend
+    port: 1234
+    port-forward: true
+    image: dockerhub.com/image
+    environment:
       KEY: 'val'
     secret:
-      - SECRET_KEY # value stored in reploy's web app
+      - SECRET_KEY
 ```
-The various aspects of a service are
+The fields for each `service` (`my-service` in the above example) are defined below:
 
 
-| Name            | Default Value | Comments                                                                                                                                                                                                                             |
+| Name            | Value | Description                                                                                                                                                                                                                             |
 |-----------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | service-name    | REQUIRED      | User defined name of the service e.g. `frontend`, `cache`, `database`                                                                                                                                                                |
 | image           | REQUIRED      | Link to the docker image                                                                                                                                                                                                             |
@@ -46,7 +46,12 @@ The various aspects of a service are
 
 
 ## Sample reploy.yml
-Consider a sample directory tree for a project
+
+For reference, here's what the `reploy.yml` file for our repository looks like:
+
+### Directory Structure
+<br/>
+
 ```
 project_root # root directory of your project (home of the .git directory)
 ├── web-backend
@@ -56,9 +61,12 @@ project_root # root directory of your project (home of the .git directory)
 │   └── main.js
 ├── ...
 ```
-and its corresponding `reploy.yml` file
+
+### Project File Structure
+<br/>
+
 ```yaml
-id: yougetthisfromthewebapp
+id: <*id from web authentication*>
 services:
   web-backend:
     relative-path: ./web-backend
