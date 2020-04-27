@@ -1,5 +1,3 @@
 module.exports = {
-  someSidebar: {
-    "Onboarding": ['doc1', 'doc2', 'doc3'],
-  },
+  someSidebar: ["installation", "getting-started", "doc3"]
 };
