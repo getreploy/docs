@@ -18,10 +18,10 @@ The command line tool with then instruct you with further steps.
 
 ## Setting up a project
 
-Depending on what your situation looks like, there are a few options for getting started with a reploy project:
-- If a reploy project has already been set up for your team (i.e if a `reploy.yml` file exists in your project's root directory), you should be good to go.
-- If you don't have a reploy project setup, and you wanna get a quick tast of what reploy is like, use our fullstack sample app [here](https://github.com/getreploy/fullstack-sample)
-- If you'd like to setup your own project, you can do that [here](project-setup.md).
+Depending on what your situation looks like, there are a few options for getting started with a Reploy project:
+- If a Reploy project has already been set up for your team (i.e if a `reploy.yml` file exists in your project's root directory), you should be good to go. Move on to the following section.
+- If you don't have a Reploy project setup, and you want to get a quick taste of what Reploy is like, use our fullstack sample app here - [https://github.com/getreploy/fullstack-sample](https://github.com/getreploy/fullstack-sample)
+- If you'd like to setup your own project, you can do that [here](project-setup).
 
 ## Executing Commands
 
@@ -29,16 +29,18 @@ Once a Reploy project is set up, you can start running arbitrary linux commands 
 
 Here are a few examples:
 
-To run a node app
-```
-cd frontend
-reploy run npm install
-reploy run npm start
-```
-To run a Golang service
-```
-cd backend
-reploy run go run .
+
+```bash
+reploy run ls
+
+# Sample commands
+
+# To run a node app
+# reploy run npm install
+# reploy run npm start
+
+# To run a Golang service
+# reploy run go run .
 ```
 
 ## Accessing the project
