@@ -6,6 +6,15 @@ module.exports = {
   favicon: "img/favicon.png",
   organizationName: "getreploy", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
+  scripts: [
+    // Object format.
+    {
+      src:
+        '//js.hs-scripts.com/7530449.js',
+      async: true,
+      id: 'hs-script-loader',
+    },
+  ],
   themeConfig: {
     navbar: {
       logo: {
@@ -30,42 +39,51 @@ module.exports = {
               label: "Installation",
               to: "docs/installation"
             },
-            {
-              label: "Second Doc",
-              to: "docs/doc2"
-            }
-          ]
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus"
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus"
-            }
-          ]
-        },
-        {
-          title: "Social",
-          items: [
             // {
-            //   label: 'Blog',
-            //   to: 'blog',
-            // },
-            {
-              label: "GitHub",
-              href: "https://github.com/getreploy/"
-            },
-            {
-              label: "Facebook",
-              href: "https://fb.com/getreploy"
-            }
+            //   label: "Get Started",
+            //   to: "docs/get-started"
+            // }
           ]
         },
+        {
+          title: "Early Access",
+          items: [
+            {
+              label: "Request Access Here",
+              href: "https://getreploy.com/"
+            },
+          ]
+        },        
+        // {
+        //   title: "Community",
+        //   items: [
+        //     {
+        //       label: "Stack Overflow",
+        //       href: "https://stackoverflow.com/questions/tagged/docusaurus"
+        //     },
+        //     {
+        //       label: "Discord",
+        //       href: "https://discordapp.com/invite/docusaurus"
+        //     }
+        //   ]
+        // },
+        // {
+        //   title: "Social",
+        //   items: [
+        //     // {
+        //     //   label: 'Blog',
+        //     //   to: 'blog',
+        //     // },
+        //     {
+        //       label: "GitHub",
+        //       href: "https://github.com/getreploy/"
+        //     },
+        //     {
+        //       label: "Facebook",
+        //       href: "https://fb.com/getreploy"
+        //     }
+        //   ]
+        // },
         {
           title: "Contact",
           items: [
@@ -75,12 +93,12 @@ module.exports = {
             // },
             {
               label: "hello@getreploy.com",
-              href: "https://github.com/getreploy/"
+              href: ""
             },
-            {
-              label: "Messenger",
-              href: "https://m.me/getreploy"
-            }
+            // {
+            //   label: "Messenger",
+            //   href: "https://m.me/getreploy"
+            // }
           ]
         }
       ],
