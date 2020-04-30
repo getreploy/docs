@@ -52,3 +52,5 @@ reploy status
 ```
 
 Do not forget to add the port to the IP address you get from above e.g. `192.168.100.100:3000`. The best part about these links is that they are sharable and instantaneously update as you make changes!
+
+If `port-forward: true` is set in your `reploy.yml`, you can also access services at `localhost:<PORT>`. In this case, it'll be `localhost:3000`.

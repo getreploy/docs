@@ -1,3 +1,3 @@
 module.exports = {
-  someSidebar: ["installation", "getting-started", "project-setup"]
+  someSidebar: ["installation", "getting-started", "project-setup", "sample-fullstack-app"]
 };
