@@ -8,8 +8,8 @@ module.exports = {
   projectName: "docs", // Usually your repo name.
   themeConfig: {
     algolia: {
-      apiKey: 'ecddee4170f30fbfcbbcc08c9c93d7b7',
-      indexName: 'getreploy',
+      apiKey: "ecddee4170f30fbfcbbcc08c9c93d7b7",
+      indexName: "getreploy"
     },
     navbar: {
       logo: {
@@ -38,57 +38,24 @@ module.exports = {
             {
               label: "Installation",
               to: "docs/installation"
-            },
-            {
-              label: "Second Doc",
-              to: "docs/doc2"
             }
           ]
         },
         {
-          title: "Community",
+          title: "Early Access",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus"
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus"
-            }
-          ]
-        },
-        {
-          title: "Social",
-          items: [
-            // {
-            //   label: 'Blog',
-            //   to: 'blog',
-            // },
-            {
-              label: "GitHub",
-              href: "https://github.com/getreploy/"
-            },
-            {
-              label: "Facebook",
-              href: "https://fb.com/getreploy"
+              label: "Request Access Here",
+              href: "https://getreploy.com/"
             }
           ]
         },
         {
           title: "Contact",
           items: [
-            // {
-            //   label: 'Blog',
-            //   to: 'blog',
-            // },
             {
               label: "hello@getreploy.com",
-              href: "https://github.com/getreploy/"
-            },
-            {
-              label: "Messenger",
-              href: "https://m.me/getreploy"
+              href: ""
             }
           ]
         }
