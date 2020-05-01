@@ -7,7 +7,7 @@ title: Sample full-stack app
 Please follow the [installation](installation.md) and [authentication](getting-started.md) instructions before continuing.
 :::
 
-## Repository
+## Repository	
 
 [https://github.com/getreploy/fullstack-sample/](https://github.com/getreploy/fullstack-sample/)
 
