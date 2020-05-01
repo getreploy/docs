@@ -7,10 +7,6 @@ title: Sample full-stack app
 Please follow the [installation](installation.md) and [authentication](getting-started.md) instructions before continuing.
 :::
 
-## Repository
-
-[https://github.com/getreploy/fullstack-sample/](https://github.com/getreploy/fullstack-sample/)
-
 ## Overview
 
 This repo has three reploy 'services': a frontend react application in `/frontend`, a backend go application in `/backend` and a redis container.
