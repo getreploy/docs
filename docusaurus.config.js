@@ -16,6 +16,10 @@ module.exports = {
     },
   ],
   themeConfig: {
+    algolia: {
+      apiKey: 'ecddee4170f30fbfcbbcc08c9c93d7b7',
+      indexName: 'getreploy',
+    },
     navbar: {
       logo: {
         alt: "Reploy Logo",
@@ -26,6 +30,11 @@ module.exports = {
           href: "https://github.com/getreploy/docs",
           label: "GitHub",
           position: "right"
+        },
+        {
+          href: "https://getreploy.com/",
+          label: "Request Access",
+          position: "left"
         }
       ]
     },
