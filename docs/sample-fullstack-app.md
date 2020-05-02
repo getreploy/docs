@@ -3,9 +3,8 @@ id: sample-fullstack-app
 title: Sample full-stack app
 ---
 
-:::caution
-Please follow the [installation](installation.md) and [authentication](getting-started.md) instructions before continuing.
-:::
+## Installation and Authentication
+Please follow the [instructions for installation and authentication](installation.md) (it'll be helpful to open this in a new tab).
 
 ## Repository	
 
@@ -21,7 +20,7 @@ At the top level directory, there is a `reploy.yml` file which describes the env
 
 Clone and step into the directory
 ```
-git clone github.com/getreploy/fullstack-sample
+git clone https://github.com/getreploy/fullstack-sample
 cd fullstack-sample
 ```
 
@@ -54,8 +53,11 @@ To access the web app, run
 
 ```
 reploy status
+
+# Dont forget to add the port number at the end of the IP address
+# e.g. http://192.168.100.100:3000
 ```
 
-and head to `IP_Address:3000` to access the app. You can now update code and view changes instantaneously through this link. Feel free to share it around as well!
+You can now update code and view changes instantaneously through this link. Feel free to share it around as well!
 
 You can also access the app at `localhost:3000` since `port-forward: true` is in the `reploy.yml` config file for all services. 
