@@ -3,25 +3,13 @@ id: getting-started
 title: Getting started with Reploy
 sidebar_label: Getting started
 ---
-## Authentication
-
-Once Reploy has been [installed and the service is up and running](installation.md), the next step is authentication, as the CLI requires authentication before any commands can be executed.
-
-To authenticate, from your mac, just run:
-
-```
-reploy auth
-```
-The command line tool with then instruct you with further steps.
-
-
 
 ## Setting up a project
 
 Depending on what your situation looks like, there are a few options for getting started with a Reploy project:
 - If a Reploy project has already been set up for your team (i.e if a `reploy.yml` file exists in your project's root directory), you should be good to go. Move on to the following section.
-- If you don't have a Reploy project setup, and you want to get a quick taste of what Reploy is like, use our fullstack sample app here - [https://github.com/getreploy/fullstack-sample](https://github.com/getreploy/fullstack-sample)
-- If you'd like to setup your own project, you can do that [here](project-setup).
+- If you don't have a Reploy project setup, and you want to get a quick taste of what Reploy is like, use our [sample full-stack app](sample-fullstack-app.md). Once you've warmed up, set up a `reploy.yml` file for yourself [here](project-setup.md).
+- If you'd like to setup your own project's `reploy.yml`, you can do that [here](project-setup.md).
 
 ## Executing Commands
 
