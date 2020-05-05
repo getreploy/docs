@@ -58,7 +58,7 @@ However, if the status is <Highlight color="#fdcc16">started</Highlight> (notice
 
 Once Reploy has been installed and the service is up and running, the next step is authentication, as the CLI requires authentication before any commands can be executed.
 
-To authenticate, from your mac, just run:
+To authenticate, just run:
 
 ```
 reploy auth
