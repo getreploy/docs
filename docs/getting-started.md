@@ -1,7 +1,7 @@
 ---
 id: getting-started
 title: Getting started with Reploy
-sidebar_label: Getting started
+sidebar_label: Starting with Reploy
 ---
 
 ## Setting up a project
