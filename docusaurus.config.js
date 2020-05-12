@@ -7,6 +7,15 @@ module.exports = {
   organizationName: "getreploy", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
   themeConfig: {
+    forceDarkMode: true,
+    darkMode: true,
+    announcementBar: {
+      id: 'support_us', // Any value that will identify this message
+      content:
+        'Request early access to Reploy: <a target="_blank" rel="noopener noreferrer" href="https://getreploy.com">https://getreploy.com</a>',
+      backgroundColor: '#9130c0', // Defaults to `#fff`
+      textColor: '#fff', // Defaults to `#000`
+    },
     algolia: {
       apiKey: "ecddee4170f30fbfcbbcc08c9c93d7b7",
       indexName: "getreploy"
@@ -14,7 +23,8 @@ module.exports = {
     navbar: {
       logo: {
         alt: "Reploy Logo",
-        src: "img/logo.svg"
+        src: "img/logo.svg",
+        srcDark: 'img/logo_dark.svg', // default to logo.svg
       },
       links: [
         {
@@ -68,8 +78,9 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/getreploy/docs/edit/master/website/"
+          editUrl: "https://github.com/getreploy/docs/edit/master/"
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css")

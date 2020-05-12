@@ -4,7 +4,7 @@ title: Reploy Actions
 ---
 
 ## Introducing Actions
-The best way to think about actions are as user-defined aliases for common commands used by you developers on your team.
+The best way to think about actions are as user-defined aliases for common commands used by you and developers on your team.
 
 ## Structure
 
@@ -58,7 +58,7 @@ A [complete sample](sample-reploy.yml) can be found in the sample section.
 
 ## Execution
 
-```sh
+```bash
 reploy action <action-name>
 
 # Here's an example

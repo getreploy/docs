@@ -1,16 +1,9 @@
-import React from "react";
-import classnames from "classnames";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import styles from "./styles.module.css";
-import { Redirect } from "react-router-dom";
+import React from 'react';
+import {Redirect} from '@docusaurus/router';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function Home() {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
-  return <Redirect to={useBaseUrl("docs/installation")} />;
+  return <Redirect to={useBaseUrl('/intro')} />;
 }
 
 export default Home;

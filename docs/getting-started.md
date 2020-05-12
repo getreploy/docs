@@ -31,6 +31,15 @@ reploy run ls
 # reploy run go run .
 ```
 
+Or you can run any pre-defined action where the `<action-name>` is defined in your `reploy.yml`
+
+```bash
+reploy action <action-name>
+
+# Here's an example
+# reploy action flush-redis
+```
+
 ## Accessing the project
 
 Once you run a command and have a service (like a web application) running, you'll need to access the service. You can find the IP address of the project by typing:
