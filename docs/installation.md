@@ -24,16 +24,29 @@ And to verify the installation:
 reploy help
 ```
 
-## Starting the Reploy service
+## Authentication
 
-In order to manage forwarded ports, watch files, etc. a *reploy daemon* running in the background is required.
+Once Reploy has been installed and the service is up and running, the next step is authentication, as the CLI requires authentication before any commands can be executed.
+
+To authenticate, just run:
 
 ```
-brew services start getreploy/reploy/reploy
+reploy auth
+```
+The command line tool with then instruct you with further steps.
+ 
+
+## Starting the Reploy service
+
+Once you've successfully authenticated, you should now start the reploy daemon. In order to manage forwarded ports, watch files, etc. a *reploy daemon* running in the background is required.
+
+```bash
+brew services start reploy
 ```
 
 And to verify the status of the service:
-```
+
+```bash
 brew services list
 ```
 
@@ -52,15 +65,31 @@ export const Highlight = ({children, color}) => (
 
 If the status is <Highlight color="#0ab78f">started</Highlight> (notice the color green), the service has started successfully, and you're good to go. 
 
-However, if the status is <Highlight color="#fdcc16">started</Highlight> (notice the color yellow), the service is not working as expected. You'll need to see the log `tail -f /usr/local/var/log/reploy.log` for additional details.
+However, if the status is <Highlight color="#fdcc16">started</Highlight> (notice the color yellow), the service is not working as expected. You'll need to see the log `tail -f /usr/local/var/log/reploy.log` for additional details. See common issues below.
 
-## Authentication
+### Common Issues
 
-Once Reploy has been installed and the service is up and running, the next step is authentication, as the CLI requires authentication before any commands can be executed.
+If you see anything related to the following in your `tail -f /usr/local/var/log/reploy.log`:
 
-To authenticate, just run:
+1. Authentication problems - you'll need to run `reploy auth` again to successfully authenticate before starting the daemon.
 
-```
+```bash
 reploy auth
+
+# once auth is successful, restart the service
+
+brew services stop reploy
+brew services start reploy
 ```
-The command line tool with then instruct you with further steps.
+
+2. Port `8384` is already in use - you'll need to kill whatever is running on port `:8384`.
+
+```bash
+lsof -i :8384
+# this will display the process (and the process ID) running on that port
+# please KILL the process before moving forward: "kill -9 <Process_ID>"
+
+# restart the reploy daemon
+brew services stop reploy
+brew services start reploy
+```

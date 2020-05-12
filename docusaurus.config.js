@@ -7,8 +7,7 @@ module.exports = {
   organizationName: "getreploy", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
   themeConfig: {
-    forceDarkMode: true,
-    darkMode: true,
+    defaultDarkMode: true,
     announcementBar: {
       id: 'support_us', // Any value that will identify this message
       content:
