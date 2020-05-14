@@ -1,0 +1,6 @@
+id: rxzklsiwspodh2cnffer7g
+services:
+  frontend:
+    relative-path: .
+    port: 3000
+    image: reploy/nodejs:v1
